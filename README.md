@@ -1,7 +1,6 @@
 # Southern Southeast Inside Waters (SSEI) Sablefish (*Anoplopoma fimbria*) Stock Assessment
 
-Please direct any questions to: Rhea Ehresmann (rhea.ehresmann@alaska.gov)  
-<img src="https://user-images.githubusercontent.com/57467593/163078352-ae80153c-e244-4c0b-ba3e-584b404072a8.png" width=10% height=10%>
+<img src="https://user-images.githubusercontent.com/57467593/163078352-ae80153c-e244-4c0b-ba3e-584b404072a8.png" width=10% height=10%> Please direct any questions to: Rhea Ehresmann (rhea.ehresmann@alaska.gov)  
 
 **Sources:** *Ehresmann, R.,  A. Baldwin, M. Bargas, E. Ebert, M. Leeseberg, E. Teodori, and K. Wood. 2021.  Management report for the Southeast Alaska and Yakutat groundfish fisheries,   2017–2020. Alaska Department of Fish and Game,Fishery Management Report No. 21-02,  Anchorage.*
 
