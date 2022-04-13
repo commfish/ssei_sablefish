@@ -1,75 +1,77 @@
 
 # SSEI sablefish analysis for management memo. 
 # Includes: survey and fishery CPUE and summary of biological data
-# Authors:  Jane Sullivan (jane.sullivan@noaa.gov); Andrew Olson (andrew.olson@alaska.gov); Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
-# Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@noaa.gov)
-# Last modified: April 15, 2021  
+# Authors:  Andrew Olson (andrew.olson@alaska.gov); and Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
+# Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@alaska.gov)
+# Last modified: April 12, 2022   # final assessment for 2022 season 
 
 # set up ----
 source('r/helper.r') 
+library(janitor) 
 
-###  set plotting theme to use TNR  ###
-#font_import() #remove # to run this but only do this one time - it takes a while
-loadfonts(device="win")
-windowsFonts(Times=windowsFont("TT Times New Roman"))
-theme_set(theme_bw(base_size=12,base_family='Times New Roman')
-          +theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()))
-
-# Set year
-YEAR <- 2020 
+# Create figure and output folders
+YEAR <- 2022 # assessment year
+fig_path <- paste0('figures/', YEAR) # folder to hold all figures for a given year
+dir.create(fig_path) # creates YEAR subdirectory inside figures folder
+output_path <- paste0('output/', YEAR) # output and results
+dir.create(output_path) 
 
 # data ----
 
 # harvest by year and permit type AHO from management memo
-ssei_aho <- data.frame(year = c(1985:2020),
+ssei_aho <- data.frame(year = c(1985:2021),
                        aho = c(rep(790000, 13), 632000, 720000, rep(696000, 9),
                                634000, 634000, 583280, 583280, 583280, 536618, 
-                               536618, 482956, 516763, 578774, 590349, 572639))  #need to update with AHO for 2021
+                               536618, 482956, 516763, 578774, 590349, 572639, 601271))  #need to update with AHO for 2022
 
-# Get all fish ticket data from ALEX query for sablefish in SSEI management area
-# and exclude fish tickets from test fishery = 43 
-read_xlsx("data/fishery/raw_data/SSEI fishticket data new.xlsx") %>%  
-  rename_all(tolower) %>% 
-  filter(species_code == 710, harvest_code != 43) -> fishery_df
+# Get all fish ticket data from OceanAK query for sablefish in SSEI management area
+# and exclude fish tickets from test fishery = 43 and Annette Island Fisheries; remove trawl gear
+read_csv("data/fishery/raw_data/SSEI fishticket data new.csv", guess_max = 50000) %>%  
+  clean_names() %>% 
+  rename(year = dol_year) %>% 
+  filter(species_code == 710, !harvest_code %in% c(17, 43), gear_code != 7) -> fishery_df
 
-# Data from ALEX query for pot logbook data
-read_xlsx("data/fishery/raw_data/SSEI pot logbook data new.xlsx") %>%  
-  rename_all(tolower) %>% 
-  filter(target_species_code == 710) -> pot_log_df
+# Data from OceanAK query for pot logbook data with species code already filtered for 710
+read_csv("data/fishery/raw_data/SSEI pot logbook data new.csv") %>%  
+  clean_names() %>% 
+  filter(trip_target_species_code == 710, groundfish_management_area_code == "SSEI") -> pot_log_df
 
-# Data from ALEX query for longline logbook data
-read_xlsx("data/fishery/raw_data/SSEI longline logbook data new.xlsx") %>% 
-  rename_all(tolower)  %>% 
-  filter(target_species_code == 710) -> ll_log_df
+# Data from OceanAK query for longline logbook data - Region 1 dashboard stock report "Hooks and Ticket Pounds" 
+read_csv("data/fishery/raw_data/SSEI longline logbook data new.csv", guess_max = 50000) %>% 
+  clean_names() %>% 
+  filter(target_species_code == 710, g_management_area_code == "SSEI") -> ll_log_df
 
-# Data from SQL request to Justin Daily - fishery logbook
-read.csv("data/fishery/raw_data/ssei longline sablefish lbs per set new.csv") %>% 
-  rename_all(tolower)  -> ll_set_df
+# Data from OceanAK stock report - fishery logbook data sablefish lbs per set  ----- DO WE NEED THIS FOR POT LOGBOOKS?! 
+read_csv("data/fishery/raw_data/ssei longline sablefish lbs per set new.csv") %>% 
+  clean_names() -> ll_set_df
 
 # Data from OceanAK query for longline survey hook accounting in SSEI 
-read_xlsx("data/survey/raw_data/ssei survey hook accounting new.xlsx") %>% 
-  rename_all(tolower) -> srv_cpue
+# need to exclude 2021 experimental set 18 station 99
+read_csv("data/survey/raw_data/ssei survey hook accounting new.csv", guess_max = 50000) %>% 
+  clean_names()  %>%
+  filter(station_no != 99) -> srv_cpue
 
 # Data from OceanAK query for longline survey bio data in SSEI 
-read.csv("data/survey/raw_data/SSEI LL survey bio data new.csv", fileEncoding="UTF-8-BOM") %>% 
-  rename_all(tolower) -> svy_bio_df
+# need to exclude 2021 experimental set 
+read_csv("data/survey/raw_data/SSEI LL survey bio data new.csv", guess_max = 50000) %>% 
+  clean_names() %>% 
+  filter(species == "Sablefish") -> svy_bio_df
 
-# Data from ALEX query for port sampling data in SSEI 
-read_xlsx("data/fishery/raw_data/SSEI port sampling data new.xlsx") %>% 
-  rename_all(tolower) -> fish_bio_df
+# Data from OceanAK query for port sampling data in SSEI - filtered already for species 710 and SSEI
+read_csv("data/fishery/raw_data/SSEI port sampling data new.csv", guess_max = 50000) %>% 
+  clean_names()-> fish_bio_df
 
 
 # harvest by year and permit type ----
 
 fishery_df %>% 
-  filter(gear_code %in% c(61, 91), year > 1985) %>% 
   full_join(ssei_aho) %>% 
   group_by(year) %>% 
-  summarise(total_harvest = sum(round_pounds),
+  summarise(total_harvest = sum(whole_weight_sum),
             aho = mean(aho)) %>% 
   mutate(mgmt_type = ifelse(year %in% 1985:1996, "Limited Entry", "Equal Quota Share")) -> harvest
 
-write.csv(harvest, "output/harvest.csv") # save output
+write_csv(harvest, paste0(output_path, "/harvest.csv")) # save output
 
 xaxis <- FNGr::tickr(harvest, year, 3)
 
@@ -83,32 +85,33 @@ ggplot(harvest, aes(year, total_harvest)) +
   scale_y_continuous(label = scales::comma)+
   theme(legend.position = c(0.75, 0.85), legend.title = element_blank())
 
-ggsave(paste0("figures/ssei_fishery_harvest.png"), width = 6.5, height = 5, units = "in", dpi = 300)
+ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 6.5, height = 5, units = "in", dpi = 200)
 
 # Harvest distribution by area ---- not in report, look at distribution
+unique(fishery_df$stat_area)
 
 fishery_df %>% 
-  filter(g_stat_area != 1065, 
-         g_management_area_code == "SSEI", year >= 1997) %>%
-  mutate(Area = case_when(g_stat_area %in% c(325431, 315431, 325401, 315401) ~ "Dixon Entrance",
-                          g_stat_area %in% c(305431, 305501, 305502, 305503, 315432, 315501,
+  filter(stat_area != 1065, 
+         mgt_area == "SSEI", year >= 1997) %>%
+  mutate(Area = case_when(stat_area %in% c(325431, 315431, 325401, 315401) ~ "Dixon Entrance",
+                          stat_area %in% c(305431, 305501, 305502, 305503, 315432, 315501,
                                              315502, 315503, 315504, 325433, 325501, 325502,
                                              325503, 325504) ~ "Lower Clarence Strait",
-                          g_stat_area %in% c(305531, 305532, 315531, 315532, 325531, 325532,
+                          stat_area %in% c(305531, 305532, 315531, 315532, 325531, 325532,
                                              325533, 335506, 335534, 335535) ~ "Upper Clarence Strait",
-                          g_stat_area %in% c(315600, 325601, 325602, 325603, 325604, 325631, 325632,
+                          stat_area %in% c(315600, 325601, 325602, 325603, 325604, 325631, 325632,
                                              335533, 335601, 335602, 335603, 335632, 335633, 345535,
                                              345604) ~ "Sumner Strait",
-                          TRUE ~ "Other")) %>%
+                          TRUE ~ "Other")) %>% 
   group_by(year, Area) %>% 
-  summarise(total_harvest = sum(round_pounds), 
-            permit_count = n_distinct(cfec_no)) %>% 
+  summarise(total_harvest = sum(whole_weight_sum), 
+            permit_count = n_distinct(cfec)) %>% 
   mutate(Area = factor(Area, 
                        levels = c("Sumner Strait", "Upper Clarence Strait", 
-                                  "Lower Clarence Strait", "Dixon Entrance"))) %>% 
+                                  "Lower Clarence Strait", "Dixon Entrance", "Other"))) %>% 
   filter(permit_count >= 3) -> area_harvest 
 
-write.csv(area_harvest, "output/harvest_byarea.csv") # save output
+write_csv(area_harvest, paste0(output_path, "/harvest_byarea.csv")) # save output
 
 ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   geom_bar(stat = "identity", color = "black") +
@@ -117,29 +120,32 @@ ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   xlab("\nYear") +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
   scale_y_continuous(labels = scales::comma, breaks = seq(0, 700000, 100000)) +
-  theme(legend.position = c(0.7, 0.88), legend.title = element_blank())
+  theme(legend.position = c(0.75, 0.88), legend.title = element_blank())
 
-ggsave(paste0("figures/SSEI_Fishery_Harvest_Distribution.png"), width = 7.5, 
-       height = 6, units = "in", dpi = 300)
+ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution.png"), width = 6.5, 
+       height = 6, units = "in", dpi = 200)
 
 # pot fishery cpue ----
   
 # Confidentiality
 fishery_df %>%
-  filter(gear == 'Pot') %>%
+  filter(gear_name == 'Pot') %>%
   group_by(year) %>% 
-  summarize(n_tickets = n_distinct(ticket_no), 
-         n_permits = n_distinct(cfec_no)) %>% 
+  summarize(n_tickets = n_distinct(fish_ticket_number), 
+         n_permits = n_distinct(cfec)) %>% 
   filter(n_permits < 3) -> omit_yrs
   
 # Effort data currently summarized by stat area. We want trip totals for all of
 # SSEI, so sum by trip_no
 pot_log_df %>% 
-  filter(year != omit_yrs$year) %>% 
-  group_by(year, trip_no) %>% 
-  summarize(round_pounds = sum(pounds_of_sablefish),
+  filter(year > 1992) %>%  #basically 1985 was the only year pre-1992 that had > 3 permit holders fishing pot gear and 
+  # our logbook data starts in 1997 anyway 
+  # filter(year != omit_yrs$year) %>% 
+  group_by(year, trip_number) %>% 
+  mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>% # avg weight from port sampling data - pot trips only from 2019-2021
+  summarize(round_pounds = sum(pounds),
             n_pots = sum(number_of_pots)) %>% 
-  mutate(cpue = round_pounds / n_pots) %>% 
+  mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
   summarise(sd = sd(cpue),
             cpue = mean(cpue),
             n = n(),
@@ -147,7 +153,7 @@ pot_log_df %>%
   mutate(ll = cpue - 2 * se,
          ul = cpue + 2 * se) -> pot_cpue 
 
-write.csv(pot_cpue, paste0("output/pot_cpue.csv")) # save output
+write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
 
 pot_cpue %>% ggplot(aes(year, cpue)) +
   geom_point() +
@@ -159,8 +165,8 @@ pot_cpue %>% ggplot(aes(year, cpue)) +
   theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
   expand_limits(y = 0)
 
-ggsave(paste0("figures/pot_fishery_cpue.png"), width = 6.5, 
-       height = 5, units = "in", dpi = 300)
+ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5, 
+       height = 5, units = "in", dpi = 200)
 
 # ll survey cpue ---- 
 
@@ -173,11 +179,11 @@ ggsave(paste0("figures/pot_fishery_cpue.png"), width = 6.5,
 # condition code "02" or invalid)
 
 srv_cpue <- srv_cpue %>% 
-  dplyr::select(year, trip_no = `trip no`, set = `set no`, skate = `subset no`,
-                skate_condition_cde = `subset condition code`, 
-                Stat = `g stat area`, bare = `hooks - number bare`,
-                bait = `hooks - number with bait`, invalid = `hooks - number invalid`,
-                no_hooks = `hooks - total number`, sablefish)
+  dplyr::select(year, trip_no, set = set_no, skate = subset_no,
+                skate_condition_cde = subset_condition_code, 
+                Stat = g_stat_area, bare = hooks_number_bare,
+                bait = hooks_number_with_bait, invalid = hooks_number_invalid,
+                no_hooks = hooks_total_number, sablefish)
 
 # we need to review raw data - looks like there are a few subsets with more than
 # 12 invalid hooks that are not invalid
@@ -203,12 +209,10 @@ srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there sh
 srv_cpue <- srv_cpue %>% 
   mutate(skate_condition_cde = ifelse(year > 1997 & c(is.na(no_hooks) | no_hooks == 0), 2, skate_condition_cde))
 
-str(srv_cpue)
-
 # Get subset for cpue analysis, standardize hooks
 srv_cpue <- srv_cpue %>% 
- filter(year >= 1998, 
-        skate_condition_cde %in% c("01","03")) %>% 
+  filter(year >= 1998, 
+         skate_condition_cde %in% c(1, 3)) %>% 
   replace_na(list(bare = 0, bait = 0, invalid = 0, sablefish = 0)) %>% 
   mutate(no_hooks = no_hooks - invalid, # remove invalid hooks
          std_hooks = ifelse(year %in% c(1998, 1999), 2.2 * no_hooks * (1 - exp(-0.57 * (64 * 0.0254))),
@@ -232,7 +236,7 @@ srv_cpue %>%
                    sd = round(sd(set_cpue), 4),
                    se = round(sd / sqrt(n_set), 4)) -> srv_cpue
 
-write.csv(srv_cpue, paste0("output/llsurvey_cpue.csv")) # save output
+write_csv(srv_cpue, paste0(output_path, "/llsurvey_cpue.csv")) # save output
 
 # Percent change in compared to a ten year rolling average
 srv_cpue %>% 
@@ -242,7 +246,6 @@ srv_cpue %>%
          eval_lt = ifelse(perc_change_lt < 0, "decrease", "increase")) %>% 
   filter(year == max(srv_cpue$year)) -> srv_lt
 srv_lt
-
 
 # Percent change from last year
 srv_cpue %>% 
@@ -263,10 +266,10 @@ ggplot(data = srv_cpue) +
   geom_ribbon(aes(year, ymin = cpue - sd, ymax = cpue + sd),
               alpha = 0.2) +
   scale_x_continuous(breaks = axis$breaks, labels = axis$labels) + 
-  lims(y = c(0, 0.3)) +
+  lims(y = c(0, 0.35)) +
   labs(x = NULL, y = "Survey CPUE (number per hook)\n") 
 
-ggsave(paste0("figures/ssei_ll_survey_cpue.png"), 
+ggsave(paste0(fig_path,"/ssei_ll_survey_cpue.png"), 
        dpi = 300, width = 6.5, height = 5, units = "in")
 
 # Show how/where old code was wrong:
@@ -295,8 +298,8 @@ ll_set_df %>%
          time_hauled = anytime(time_hauled),
          soak = difftime(time_hauled, time_set, units = 'hours'),
          Gear = factor(Gear),
-         Gear = case_when(Gear == "06" ~ "AB",
-                          Gear %in% c("01", "02", "05") ~ "CS",
+         Gear = case_when(Gear == "6" ~ "AB",
+                          Gear %in% c("1", "2", "5") ~ "CS",
                           TRUE ~ "Other"),
          Hook_size = factor(hook_size),
          Size = factor(as.numeric(gsub("[^0-9]", "", hook_size))),
@@ -306,7 +309,7 @@ ll_set_df %>%
          std_cpue = sable_lbs_set / std_hooks,
          dum = 1, 
          dumstat = 1) %>% 
-  filter(!is.na(date), !is.na(hook_spacing), !is.na(sable_lbs_set),
+  filter(!is.na(date), !is.na(hook_spacing), !is.na(sable_lbs_set), !is.na(no_hooks), 
          !is.na(start_lon), !is.na(start_lon), !is.na(soak), !is.na(depth),
          !is.na(hook_size), hook_size != "MIX", soak > 0) %>% 
   group_by(year, trip_no) %>% 
@@ -330,8 +333,8 @@ fishery_cpue %>%
   expand_limits(y = 0) +
   theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm"))
 
-ggsave(paste0("figures/fishery_trip_vessel_trends_1997_", YEAR, ".png"), width = 6.5, 
-       height = 8, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/fishery_trip_vessel_trends_1997_", YEAR, ".png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
 
 # nominal cpue ----
 
@@ -346,9 +349,9 @@ fishery_cpue %>%
             upper = annual_cpue + (2 * se),
             lower = annual_cpue - (2 * se)) -> fish_sum
 
-write.csv(fish_sum, paste0("output/llfishery_cpue.csv")) # save output
+write_csv(fish_sum, paste0(output_path, "/llfishery_cpue.csv")) # save output
 
-xaxis <- FNGr::tickr(fishery_cpue, year, 3)
+xaxis <- FNGr::tickr(fishery_cpue, year, 2)
 fish_sum %>% ggplot(aes(year, annual_cpue)) +
   geom_line() +
   geom_point() +
@@ -356,10 +359,10 @@ fish_sum %>% ggplot(aes(year, annual_cpue)) +
               alpha = 0.2) +
   labs(x = NULL, y = "Longline Fishery CPUE (lb/hook)\n") +
   scale_x_continuous(breaks=xaxis$breaks, labels=xaxis$labels) +
-  expand_limits(y = 0) + ylim(0, 0.9) 
+  expand_limits(y = 0) + ylim(-0.15, 1) 
 
-ggsave(paste0("figures/ssei_ll_fishery_cpue.png"), width = 6.5, 
-       height = 5, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/ssei_ll_fishery_cpue.png"), width = 6.5, 
+       height = 5, units = "in", dpi = 200)
 
 # Percent change in fishery nominal cpue compared to a ten year rolling average
 fish_sum %>% 
@@ -378,20 +381,20 @@ perc_ch %>% mutate(perc_change_ly = (`this_year` - `last_year`) / `last_year` * 
 # Age comps ----
 
 rec_age <- 2 # age recruiting to fishery or survey
-plus_group <- 25 # plus group, lump all the old fish into one age
+plus_group <- 25 # plus group, lump all the old fish into on age
 
 rbind(
   # ll survey
   svy_bio_df %>% 
     filter(age != "NA", 
            sex %in% c("Male", "Female"), 
-           age.readability %in% c("Very Sure", "Comfortably Sure", "Fairly Sure"),
+           age_readability %in% c("Very Sure", "Comfortably Sure", "Fairly Sure"),
            age >= rec_age) %>% 
     mutate(Source = "Longline survey") %>% 
     select(Source, year, Sex = sex, age),
   # ll gear
   fish_bio_df %>% 
-    filter(project_code == 2, age != "NA", 
+    filter(project_code == 602, age != "NA", 
            sample_type == "Random", sex_code %in% c(1, 2), 
            age_readability_code %in% c(1, 2, 3)) %>% 
     mutate(Sex = case_when(sex_code == 1 ~ "Male",
@@ -400,7 +403,7 @@ rbind(
            Source = "Longline fishery") %>% 
     select(Source, year, Sex, age),
   fish_bio_df %>% 
-    filter(project_code == 17, age != "NA", 
+    filter(project_code == 617, age != "NA", 
            sample_type == "Random", sex_code %in% c(1, 2), 
            age_readability_code %in% c(1, 2, 3)) %>% 
     mutate(Sex = case_when(sex_code == 1 ~ "Male",
@@ -427,7 +430,7 @@ agecomp_df %>%
   summarise(sum(proportion)) %>% View
 
 # Output age comp sample sizes and proportions
-write.csv(agecomp_df, paste0("output/age_comps.csv"))
+write_csv(agecomp_df, paste0(output_path, "/age_comps.csv"))
 
 # Function to plot functions
 
@@ -451,7 +454,7 @@ plot_age <- function(data = agecomp_df,
   
   
   print(p)
-  ggsave(plot = p, paste0("figures/agecomp_", src, ".png"), dpi=300, height=5, width=7.5, units="in")
+  ggsave(plot = p, paste0(fig_path, "/agecomp_", src, ".png"), dpi=300, height=5, width=7.5, units="in")
   
 }
 
@@ -467,7 +470,7 @@ fish_bio_df %>%
                          sex_code == 2 ~ 'Female',
                          TRUE ~ 'Other'),
          length = length_millimeters / 10,
-         survey_type = ifelse(project_code==2, 'Longline', 'Pot')) -> fish_lengths
+         survey_type = ifelse(project_code==602, 'Longline', 'Pot')) -> fish_lengths
 
 fish_lengths %>% 
   ggplot(aes(length, year, group = year, fill = year)) + 
@@ -481,8 +484,8 @@ fish_lengths %>%
   theme(legend.position = "none") + 
   facet_wrap(~ survey_type)
 
-ggsave(("figures/ssei_fishery_lengths.png"), width = 6.5, 
-       height = 8, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/ssei_fishery_lengths.png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
 
 # length by gear types ----
 # longline
@@ -499,8 +502,8 @@ fish_lengths %>%
   theme(legend.position = "none") +
   facet_wrap(~ Sex)
 
-ggsave(("figures/ssei_fishery_ll_lengths_sex.png"), width = 6.5, 
-       height = 8, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/ssei_fishery_ll_lengths_sex.png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
 
 # pot
 fish_lengths %>% 
@@ -516,13 +519,13 @@ fish_lengths %>%
   theme(legend.position = "none") +
   facet_wrap(~ Sex)
 
-ggsave(paste0("figures/ssei_fishery_pot_lengths_sex.png"), width = 6.5, 
-       height = 8, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/ssei_fishery_pot_lengths_sex.png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
 
 # survey lengths ----
 svy_bio_df %>% 
   filter(sex %in% c('Male', 'Female')) %>% 
-  mutate(length = `length.millimeters` / 10) %>% 
+  mutate(length = length_millimeters / 10) %>% 
   ggplot(aes(length, year, group = year, fill = year)) + 
     geom_density_ridges(aes(point_fill = year, point_color = year),
                         scale = 3, alpha = 0.3) +
@@ -533,8 +536,8 @@ svy_bio_df %>%
   xlim(35, 90) + 
   facet_wrap(~ sex)
 
-ggsave(("figures/ssei_survey_lengths.png"), width = 6.5, 
-       height = 8, units = "in", dpi = 300)
+ggsave(paste0(fig_path, "/ssei_survey_lengths.png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
 
 
 
