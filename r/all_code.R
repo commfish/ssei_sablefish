@@ -3,7 +3,7 @@
 # Includes: survey and fishery CPUE and summary of biological data
 # Authors:  Andrew Olson (andrew.olson@alaska.gov); and Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
 # Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@alaska.gov)
-# Last modified: April 12, 2022   # final assessment for 2022 season 
+# Last modified: April 26, 2022   # final assessment for 2022 season 
 
 # set up ----
 source('r/helper.r') 
@@ -328,7 +328,7 @@ fishery_cpue %>%
   geom_line(size = 1) +
   geom_point(size = 2) +
   facet_wrap(~ Variable, ncol = 1, scales = "free") +
-  labs(x = "\nYear", y = "") +
+  labs(x = "\nYear", y = "Count") +
   scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
   expand_limits(y = 0) +
   theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm"))
