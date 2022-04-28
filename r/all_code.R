@@ -132,15 +132,16 @@ fishery_df %>%
   filter(gear_name == 'Pot') %>%
   group_by(year) %>% 
   summarize(n_tickets = n_distinct(fish_ticket_number), 
-         n_permits = n_distinct(cfec)) %>% 
-  filter(n_permits < 3) -> omit_yrs
+         n_permits = n_distinct(cfec), 
+         n_boats = n_distinct(adfg), 
+         n_proc = n_distinct(processor)) %>% 
+  filter(n_boats > 3, year > 1995) -> keep_yrs  # really just get two years of data that isn't confidential 
   
 # Effort data currently summarized by stat area. We want trip totals for all of
 # SSEI, so sum by trip_no
 pot_log_df %>% 
-  filter(year > 1992) %>%  #basically 1985 was the only year pre-1992 that had > 3 permit holders fishing pot gear and 
-  # our logbook data starts in 1997 anyway 
-  # filter(year != omit_yrs$year) %>% 
+  filter(year > 2019) %>%  
+  #filter(year != omit_yrs$year) %>% # not using this because of confidentiality issues for all years < 2020
   group_by(year, trip_number) %>% 
   mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>% # avg weight from port sampling data - pot trips only from 2019-2021
   summarize(round_pounds = sum(pounds),
