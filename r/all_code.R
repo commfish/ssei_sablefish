@@ -530,11 +530,11 @@ svy_bio_df %>%
   ggplot(aes(length, year, group = year, fill = year)) + 
     geom_density_ridges(aes(point_fill = year, point_color = year),
                         scale = 3, alpha = 0.3) +
-    #geom_vline(xintercept = 61, linetype = 3) + #skip this line as it pertains more to NSEI - J.S. 04/01/2020
-    xlab("Length (cm)") + ylab("Year") +
-  scale_y_reverse() +
+  xlim(35, 90) +
+  xlab("\nLength (cm)") + 
+  ylab("Year\n") +
+  scale_y_reverse(breaks = seq(2021, 1988, by = -5)) +
   theme(legend.position = "none") +
-  xlim(35, 90) + 
   facet_wrap(~ sex)
 
 ggsave(paste0(fig_path, "/ssei_survey_lengths.png"), width = 6.5, 
