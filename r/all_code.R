@@ -3,14 +3,14 @@
 # Includes: survey and fishery CPUE and summary of biological data
 # Authors:  Andrew Olson (andrew.olson@alaska.gov); and Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
 # Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@alaska.gov)
-# Last modified: April 26, 2022   # final assessment for 2022 season 
+# Last modified: April 16, 2023   # first run for 2023
 
 # set up ----
 source('r/helper.r') 
 library(janitor) 
 
 # Create figure and output folders
-YEAR <- 2022 # assessment year
+YEAR <- 2023 # assessment year
 fig_path <- paste0('figures/', YEAR) # folder to hold all figures for a given year
 dir.create(fig_path) # creates YEAR subdirectory inside figures folder
 output_path <- paste0('output/', YEAR) # output and results
@@ -19,10 +19,10 @@ dir.create(output_path)
 # data ----
 
 # harvest by year and permit type AHO from management memo
-ssei_aho <- data.frame(year = c(1985:2021),
+ssei_aho <- data.frame(year = c(1985:2022), # change most recent year to 2023
                        aho = c(rep(790000, 13), 632000, 720000, rep(696000, 9),
                                634000, 634000, 583280, 583280, 583280, 536618, 
-                               536618, 482956, 516763, 578774, 590349, 572639, 601271))  #need to update with AHO for 2022
+                               536618, 482956, 516763, 578774, 590349, 572639, 601271, 643360))  #need to update with AHO for 2023
 
 # Get all fish ticket data from OceanAK query for sablefish in SSEI management area
 # and exclude fish tickets from test fishery = 43 and Annette Island Fisheries; remove trawl gear
@@ -210,10 +210,12 @@ srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there sh
 srv_cpue <- srv_cpue %>% 
   mutate(skate_condition_cde = ifelse(year > 1997 & c(is.na(no_hooks) | no_hooks == 0), 2, skate_condition_cde))
 
+str(srv_cpue)
+
 # Get subset for cpue analysis, standardize hooks
 srv_cpue <- srv_cpue %>% 
   filter(year >= 1998, 
-         skate_condition_cde %in% c(1, 3)) %>% 
+         skate_condition_cde %in% c("01", "03")) %>% 
   replace_na(list(bare = 0, bait = 0, invalid = 0, sablefish = 0)) %>% 
   mutate(no_hooks = no_hooks - invalid, # remove invalid hooks
          std_hooks = ifelse(year %in% c(1998, 1999), 2.2 * no_hooks * (1 - exp(-0.57 * (64 * 0.0254))),
