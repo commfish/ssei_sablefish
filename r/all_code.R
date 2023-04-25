@@ -108,8 +108,8 @@ fishery_df %>%
             permit_count = n_distinct(cfec)) %>% 
   mutate(Area = factor(Area, 
                        levels = c("Sumner Strait", "Upper Clarence Strait", 
-                                  "Lower Clarence Strait", "Dixon Entrance", "Other"))) %>% 
-  filter(permit_count >= 3) -> area_harvest 
+                                  "Lower Clarence Strait", "Dixon Entrance", "Other"))) %>%  
+ filter(permit_count >= 3) -> area_harvest 
 
 write_csv(area_harvest, paste0(output_path, "/harvest_byarea.csv")) # save output
 
@@ -132,18 +132,18 @@ fishery_df %>%
   filter(gear_name == 'Pot') %>%
   group_by(year) %>% 
   summarize(n_tickets = n_distinct(fish_ticket_number), 
-         n_permits = n_distinct(cfec), 
+         n_permits = n_distinct(cfec),
          n_boats = n_distinct(adfg), 
          n_proc = n_distinct(processor)) %>% 
-  filter(n_boats > 3, year > 1995) -> keep_yrs  # really just get two years of data that isn't confidential 
+  filter(n_boats >= 3, year > 1995) -> keep_yrs  
   
 # Effort data currently summarized by stat area. We want trip totals for all of
 # SSEI, so sum by trip_no
 pot_log_df %>% 
-  filter(year > 2019) %>%  
+  #filter(year > 2019) %>%  
   #filter(year != omit_yrs$year) %>% # not using this because of confidentiality issues for all years < 2020
   group_by(year, trip_number) %>% 
-  mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>% # avg weight from port sampling data - pot trips only from 2019-2021
+  mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
   summarize(round_pounds = sum(pounds),
             n_pots = sum(number_of_pots)) %>% 
   mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
@@ -362,7 +362,7 @@ fish_sum %>% ggplot(aes(year, annual_cpue)) +
               alpha = 0.2) +
   labs(x = NULL, y = "Longline Fishery CPUE (lb/hook)\n") +
   scale_x_continuous(breaks=xaxis$breaks, labels=xaxis$labels) +
-  expand_limits(y = 0) + ylim(-0.15, 1) 
+  expand_limits(y = 0) + ylim(-0.5, 1.5) 
 
 ggsave(paste0(fig_path, "/ssei_ll_fishery_cpue.png"), width = 6.5, 
        height = 5, units = "in", dpi = 200)
@@ -419,7 +419,8 @@ rbind(
   count(Source, year, Sex, age) %>% 
   group_by(Source, year, Sex) %>% 
   mutate(proportion = round( n / sum(n), 5)) %>% 
-  tidyr::complete(age = rec_age:plus_group, nesting(Source, Sex, year), fill = list(n = 0, proportion = 0)) %>% 
+  tidyr::complete(age = rec_age:plus_group, fill = list(n = 0, proportion = 0)) %>% 
+  #tidyr::complete(age = rec_age:plus_group, nesting(Source, Sex, year), fill = list(n = 0, proportion = 0)) %>% 
   arrange(Source, year, Sex, age) %>% 
   ungroup() %>% 
   mutate(label = case_when(Source == "Longline survey" ~ "llsrv",
