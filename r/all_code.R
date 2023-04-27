@@ -136,7 +136,7 @@ fishery_df %>%
                                              335533, 335601, 335602, 335603, 335632, 335633, 345535,
                                              345604) ~ "Sumner Strait",
                           TRUE ~ "Other")) %>% 
-  group_by(year, Area) %>% 
+  group_by(year, gear_name, Area) %>% 
   summarise(total_harvest = sum(whole_weight_sum), 
             n_boats = n_distinct(adfg),
             permit_count = n_distinct(cfec)) %>% 
@@ -154,9 +154,10 @@ ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   xlab("\nYear") +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
   scale_y_continuous(labels = scales::comma, breaks = seq(0, 700000, 100000)) +
-  theme(legend.position = c(0.75, 0.88), legend.title = element_blank())
+  theme(legend.position = c(0.75, 0.88), legend.title = element_blank()) + 
+  facet_wrap(~gear_name)
 
-ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution.png"), width = 6.5, 
+ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution_gear.png"), width = 6.5, 
        height = 6, units = "in", dpi = 200)
 
 
