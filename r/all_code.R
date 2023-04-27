@@ -61,8 +61,9 @@ read_csv("data/survey/raw_data/SSEI LL survey bio data new.csv", guess_max = 500
 read_csv("data/fishery/raw_data/SSEI port sampling data new.csv", guess_max = 50000) %>% 
   clean_names()-> fish_bio_df
 
-
+##################################################################################################
 # harvest by year and permit type ----
+##################################################################################################
 
 fishery_df %>% 
   full_join(ssei_aho) %>% 
@@ -77,15 +78,47 @@ xaxis <- FNGr::tickr(harvest, year, 3)
 
 ggplot(harvest, aes(year, total_harvest)) + 
   geom_bar(stat = "identity", aes(fill = mgmt_type)) +
-  geom_line(aes(y = aho), linetype = 3, size = 1) +
+  geom_line(aes(y = aho), linetype = 3, linewidth = 1) +
   ylab("Harvest (round lbs)\n") + xlab("\nYear") +
   scale_fill_grey() + # use grey-scale for the report
   #scale_fill_manual(values= cbPalette) + scale_color_manual(values = cbPalette) +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
-  scale_y_continuous(label = scales::comma)+
-  theme(legend.position = c(0.75, 0.85), legend.title = element_blank())
+  scale_y_continuous(label = scales::comma) +
+  theme(legend.position = c(0.75, 0.85), legend.title = element_blank()) 
+  
 
 ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 6.5, height = 5, units = "in", dpi = 200)
+
+
+##################################################################################################
+# harvest by gear name
+##################################################################################################
+
+fishery_df %>% 
+  full_join(ssei_aho) %>% 
+  group_by(year, gear_name) %>% 
+  summarise(total_harvest = sum(whole_weight_sum),
+            n_permits = n_distinct(cfec),
+            n_boats = n_distinct(adfg), 
+            aho = mean(aho)) %>% 
+  mutate(mgmt_type = ifelse(year %in% 1985:1996, "Limited Entry", "Equal Quota Share")) %>% 
+  filter(n_boats >= 3) -> harvest_gear
+
+
+xaxis <- FNGr::tickr(harvest, year, 3)
+
+ggplot(harvest_gear, aes(fill = gear_name, x=year, y=total_harvest)) + 
+  geom_bar(stat = "identity", position = "stack") +
+  #geom_line(aes(y = aho), linetype = 3, linewidth = 1) +
+  ylab("Harvest (round lbs)\n") + xlab("\nYear") +
+  #scale_fill_grey() + # use grey-scale for the report
+  scale_fill_manual(values= cbPalette) + 
+  #scale_color_manual(values = cbPalette) +
+  scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
+  scale_y_continuous(label = scales::comma)+
+  theme(legend.position = c(0.75, 0.85), legend.title = element_blank()) 
+
+ggsave(paste0(fig_path, '/ssei_fishery_harvest_gear_Confidential.png'), width = 6.5, height = 5, units = "in", dpi = 200)
 
 # Harvest distribution by area ---- not in report, look at distribution
 unique(fishery_df$stat_area)
@@ -105,17 +138,18 @@ fishery_df %>%
                           TRUE ~ "Other")) %>% 
   group_by(year, Area) %>% 
   summarise(total_harvest = sum(whole_weight_sum), 
+            n_boats = n_distinct(adfg),
             permit_count = n_distinct(cfec)) %>% 
   mutate(Area = factor(Area, 
                        levels = c("Sumner Strait", "Upper Clarence Strait", 
                                   "Lower Clarence Strait", "Dixon Entrance", "Other"))) %>%  
- filter(permit_count >= 3) -> area_harvest 
+ filter(n_boats >= 3) -> area_harvest 
 
 write_csv(area_harvest, paste0(output_path, "/harvest_byarea.csv")) # save output
 
 ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   geom_bar(stat = "identity", color = "black") +
-  scale_fill_grey() + 
+  scale_fill_grey() +
   ylab("Total Harvest (round lbs)\n") + 
   xlab("\nYear") +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
@@ -125,8 +159,11 @@ ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
 ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution.png"), width = 6.5, 
        height = 6, units = "in", dpi = 200)
 
-# pot fishery cpue ----
-  
+
+##################################################################################################
+# pot fishery cpue ---- SKIP THIS IT's INCORRECT 
+##################################################################################################
+
 # Confidentiality
 fishery_df %>%
   filter(gear_name == 'Pot') %>%
@@ -136,40 +173,45 @@ fishery_df %>%
          n_boats = n_distinct(adfg), 
          n_proc = n_distinct(processor)) %>% 
   filter(n_boats >= 3, year > 1995) -> keep_yrs  
-  
-# Effort data currently summarized by stat area. We want trip totals for all of
-# SSEI, so sum by trip_no
-pot_log_df %>% 
+# can only keep 2020, 2021, 2022 due to confidentiality with POTS - check LL 
+
+
+#### THIS IS WRONG - DO NOT USE THIS  ####
+# pot logbook data 
+#pot_log_df %>% 
   #filter(year > 2019) %>%  
   #filter(year != omit_yrs$year) %>% # not using this because of confidentiality issues for all years < 2020
-  group_by(year, trip_number) %>% 
-  mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
-  summarize(round_pounds = sum(pounds),
-            n_pots = sum(number_of_pots)) %>% 
-  mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
-  summarise(sd = sd(cpue),
-            cpue = mean(cpue),
-            n = n(),
-            se = sd / sqrt(n)) %>% 
-  mutate(ll = cpue - 2 * se,
-         ul = cpue + 2 * se) -> pot_cpue 
+  #group_by(year, trip_number) %>% 
+  #mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
+  #summarize(round_pounds = sum(pounds),
+   #         n_pots = sum(number_of_pots)) %>% 
+  #mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
+  #summarise(sd = sd(cpue),
+  #         cpue = mean(cpue),
+   #       n = n(),
+    #        se = sd / sqrt(n)) %>% 
+  #mutate(ll = cpue - 2 * se,
+   #      ul = cpue + 2 * se) -> pot_cpue 
 
-write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
+#write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
 
-pot_cpue %>% ggplot(aes(year, cpue)) +
-  geom_point() +
-  geom_line() +
-  geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
-  ylab("CPUE (round lbs/pot)\n") +
-  xlab('\nYear') +
-  scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
-  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
-  expand_limits(y = 0)
+#pot_cpue %>% ggplot(aes(year, cpue)) +
+ # geom_point() +
+  #geom_line() +
+  #geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
+  #ylab("CPUE (round lbs/pot)\n") +
+  #xlab('\nYear') +
+  #scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
+  #theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
+  #expand_limits(y = 0)
 
-ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5, 
-       height = 5, units = "in", dpi = 200)
+#ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5, 
+#height = 5, units = "in", dpi = 200)
 
+
+##################################################################################################
 # ll survey cpue ---- 
+##################################################################################################
 
 # standardize hook spacing (Sigler & Lunsford 2001, CJFAS) changes in hook
 # spacing. pers. comm. with aaron.baldwin@alaska.gov: 1995 & 1996 - 118 in; 1997
@@ -192,15 +234,15 @@ srv_cpue <- srv_cpue %>%
 # data checks 
 
 # TODO: these should be changed to condition code 2. 
-srv_cpue %>% filter(skate_condition_cde %in% c(1,3) & invalid > 12) 
-srv_cpue <- srv_cpue %>% # Fix manually for now
-  mutate(skate_condition_cde = ifelse(skate_condition_cde %in% c(1,3) & invalid > 12, 
-                                      2, skate_condition_cde)) 
+#srv_cpue %>% filter(skate_condition_cde %in% c(1,3) & invalid > 12) 
+#srv_cpue <- srv_cpue %>% # Fix manually for now
+ # mutate(skate_condition_cde = ifelse(skate_condition_cde %in% c(1,3) & invalid > 12, 
+                                    #  2, skate_condition_cde)) 
 
-srv_cpue %>% filter(no_hooks < 0) # there should be none
+#srv_cpue %>% filter(no_hooks < 0) # there should be none
 
 
-srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there should be none, there is one.
+#srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there should be none, there is one.
 # year trip_no   set skate skate_condition_cde   Stat  bare  bait invalid no_hooks sablefish
 # <dbl>   <dbl> <dbl> <dbl>               <dbl>  <dbl> <dbl> <dbl>   <dbl>    <dbl>     <dbl>
 #   1  2016       2     6    16                   2 325431    NA    NA      NA        0         0
@@ -276,17 +318,100 @@ ggsave(paste0(fig_path,"/ssei_ll_survey_cpue.png"),
        dpi = 300, width = 6.5, height = 5, units = "in")
 
 # Show how/where old code was wrong:
-tst <- srv_cpue$cpue
-(tmp <- mean(log(tst+1)))
-exp(tmp-1) # see how the scale is now similar to the figs you had? this transformation isn't needed and was done incorrectly
+#tst <- srv_cpue$cpue
+#(tmp <- mean(log(tst+1)))
+#exp(tmp-1) # see how the scale is now similar to the figs you had? this transformation isn't needed and was done incorrectly
 # If you ever wanted a log transformation adding 1 (i.e. if data included 0),
 # here's how to do it correctly:
-(tmp <- log(mean(tst)+1))
-exp(tmp)-1 # will equal mean(tst)
-mean(tst)
+#(tmp <- log(mean(tst)+1))
+#exp(tmp)-1 # will equal mean(tst)
+#mean(tst)
 
+
+##################################################################################################
+# Trends in number of total trips and vessels participating in the fishery with LL gear
+##################################################################################################
+
+ll_set_df %>% 
+  select(year, trip_no, adfg = adfg_no, Spp_cde = trip_target, time_set,
+         time_hauled, Gear = longline_system_code, hook_size,  
+         hook_spacing, Stat = g_stat_area, no_hooks = number_of_hooks, 
+         depth = average_depth_meters, 
+         sets = effort_no, sable_lbs_set = sable_lbs_per_set, 
+         start_lat = start_latitude_decimal_degrees,
+         start_lon = start_longitude_decimal_degree) %>% 
+  mutate(date = anydate(time_set),
+         julian_day = yday(date),
+         time_set = anytime(time_set),
+         time_hauled = anytime(time_hauled),
+         soak = difftime(time_hauled, time_set, units = 'hours'),
+         Gear = factor(Gear),
+         Gear = case_when(Gear == "6" ~ "AB",
+                          Gear %in% c("1", "2", "5") ~ "CS",
+                          TRUE ~ "Other"),
+         Hook_size = factor(hook_size),
+         Size = factor(as.numeric(gsub("[^0-9]", "", hook_size))),
+         Year = factor(year),
+         ADFG = factor(adfg)) %>% 
+  group_by(year) %>% 
+  mutate(total_vessels = n_distinct(ADFG),
+         total_trips = n_distinct(trip_no)) %>% 
+  filter(total_vessels >=3) %>% 
+  select(year, Vessels = total_vessels, Trips = total_trips) %>% 
+  gather(Variable, Count, -year) %>%  
+  distinct() %>%  
+  mutate(Gear = "Longline") %>% 
+  filter(year <= 2022) -> longline_trips 
+
+longline_trips %>% 
+  ggplot(aes(year, Count)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  facet_wrap(~ Variable, ncol = 1, scales = "free") +
+  labs(x = "\nYear", y = "Count of Longline Trips and Vessels") +
+  scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
+  expand_limits(y = 0) +
+  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm"))
+
+ggsave(paste0(fig_path, "/fishery_trip_vessel_trends_1997_", YEAR, ".png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
+
+##################################################################################################
+# Trends in number of total trips and vessels participating in the fishery with pot gear
+##################################################################################################
+
+pot_log_df %>% 
+  select(year, trip_no = trip_number, adfg = adfg_number) %>% 
+  mutate(adfg = factor(adfg)) %>% 
+  group_by(year) %>% 
+  mutate(total_vessels = n_distinct(adfg),
+         total_trips = n_distinct(trip_no)) %>% 
+  filter(total_vessels >=3) %>% 
+  select(year, Vessels = total_vessels, Trips = total_trips) %>% 
+  gather(Variable, Count, -year) %>%  
+  distinct() %>%  
+  mutate(Gear = "Pot") %>% 
+  filter(year <= 2022) -> pot_trips 
+
+  
+total_trips <- full_join(pot_trips, longline_trips) 
+total_trips %>% 
+  ggplot(aes(year, Count)) +
+  geom_line(aes(color = Gear), linewidth = 2) +
+  geom_point(size = 2) +
+  facet_wrap(~ Variable, ncol = 1, scales = "free") +
+  labs(x = "\nYear", y = "Count") +
+  scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
+  expand_limits(y = 0) +
+  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm"))
+
+ggsave(paste0(fig_path, "/pot_and_LL_fishery_trip_vessel_trends_1997_", YEAR, ".png"), width = 6.5, 
+       height = 8, units = "in", dpi = 200)
+
+
+##################################################################################################
 # ll fishery cpue ----
-
+##################################################################################################
 ll_set_df %>% 
   select(year, trip_no, adfg = adfg_no, Spp_cde = trip_target, time_set,
          time_hauled, Gear = longline_system_code, hook_size,  
@@ -313,8 +438,8 @@ ll_set_df %>%
          dum = 1, 
          dumstat = 1) %>% 
   filter(!is.na(date), !is.na(hook_spacing), !is.na(sable_lbs_set), !is.na(no_hooks), 
-         !is.na(start_lon), !is.na(start_lon), !is.na(soak), !is.na(depth),
-         !is.na(hook_size), hook_size != "MIX", soak > 0) %>% 
+     !is.na(start_lon), !is.na(start_lon), !is.na(soak), !is.na(depth),
+     !is.na(hook_size), hook_size != "MIX", soak > 0) %>% 
   group_by(year, trip_no) %>% 
   mutate(no_sets = n_distinct(sets)) %>% 
   group_by(year) %>% 
@@ -322,25 +447,10 @@ ll_set_df %>%
          total_trips = n_distinct(trip_no)) %>% 
   ungroup() -> fishery_cpue 
 
-# Trends in number of total trips and vessels participating in the fishery
-fishery_cpue %>% 
-  select(year, Vessels = total_vessels, Trips = total_trips) %>% 
-  gather(Variable, Count, -year) %>% 
-  distinct() %>%   
-  ggplot(aes(year, Count)) +
-  geom_line(size = 1) +
-  geom_point(size = 2) +
-  facet_wrap(~ Variable, ncol = 1, scales = "free") +
-  labs(x = "\nYear", y = "Count") +
-  scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
-  expand_limits(y = 0) +
-  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm"))
 
-ggsave(paste0(fig_path, "/fishery_trip_vessel_trends_1997_", YEAR, ".png"), width = 6.5, 
-       height = 8, units = "in", dpi = 200)
-
+##################################################################################################
 # nominal cpue ----
-
+##################################################################################################
 fishery_cpue %>% 
   group_by(year) %>% 
   summarise(annual_cpue = mean(std_cpue),
@@ -367,7 +477,9 @@ fish_sum %>% ggplot(aes(year, annual_cpue)) +
 ggsave(paste0(fig_path, "/ssei_ll_fishery_cpue.png"), width = 6.5, 
        height = 5, units = "in", dpi = 200)
 
+##################################################################################################
 # Percent change in fishery nominal cpue compared to a ten year rolling average
+##################################################################################################
 fish_sum %>% 
   filter(year > max(fish_sum$year) - 10) %>% 
   mutate(lt_mean = mean(annual_cpue),
@@ -381,8 +493,9 @@ fish_sum %>%
 names(perc_ch) <- c("cpue", "last_year", "this_year") 
 perc_ch %>% mutate(perc_change_ly = (`this_year` - `last_year`) / `last_year` * 100)
 
+##################################################################################################
 # Age comps ----
-
+##################################################################################################
 rec_age <- 2 # age recruiting to fishery or survey
 plus_group <- 25 # plus group, lump all the old fish into on age
 
@@ -405,6 +518,7 @@ rbind(
                          TRUE ~ 'Other'),
            Source = "Longline fishery") %>% 
     select(Source, year, Sex, age),
+  # pot gear
   fish_bio_df %>% 
     filter(project_code == 617, age != "NA", 
            sample_type == "Random", sex_code %in% c(1, 2), 
@@ -436,7 +550,7 @@ agecomp_df %>%
 # Output age comp sample sizes and proportions
 write_csv(agecomp_df, paste0(output_path, "/age_comps.csv"))
 
-# Function to plot functions
+# Function to plot ages
 
 plot_age <- function(data = agecomp_df,
                      src = NULL) {
@@ -466,7 +580,9 @@ plot_age(data = agecomp_df, src = "llsrv")
 plot_age(data = agecomp_df, src = "llfsh")
 plot_age(data = agecomp_df, src = "potfsh")
 
+##################################################################################################
 # lengths ----
+##################################################################################################
 
 fish_bio_df %>% 
   filter(sex_code!=0) %>% 
