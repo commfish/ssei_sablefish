@@ -143,6 +143,28 @@ str(cpue)
 eg<-cpue %>% filter(Station.No == 12)
 View(eg)
 #-------------------------------------------------------------------------------
+# cpue by skate/pot
+#cpue_comp %>% group_by(Pot.Type.1) %>%
+#  dplyr::summarize(sub_samples = n(),
+#                   mean_cpue = mean(sub.cpue))
+cpue_comp<-cpue %>% filter(Station.No %in% c(12,37,44,103,107,109,120,122,125))
+
+cpue_comp %>% group_by(Station.No,Pot.Type.1) %>% 
+  dplyr::summarize(sub_samples = n(),
+                   mean_cpue = mean(sub.cpue),
+                   std = sd(sub.cpue)) -> pot_skate_cpue
+
+cpue_comp %>% group_by(Station.No,Gear) %>% 
+  dplyr::summarize(sub_samples = n(),
+                   cpue = mean(set.cpue)) -> set_cpue
+
+cpue_comp %>% group_by(Station.No,Pot.Type.1) %>% 
+  dplyr::summarize(sub_samples = n(),
+                   cpue = mean(set.cpue)) -> set_cpue_det
+
+#---------------------------------------------------------------------------
+
+
 colnames(bios)
 
 cols <- c("#F76D5E", "#FFFFBF", "#72D8FF")
@@ -164,8 +186,6 @@ ggplot(bios, aes(x = Length, fill = Pot.Type.1)) +
 
 colnames(cpue)
 
-cpue_comp<-cpue %>% filter(Station.No %in% c(12,37,44,103,107,109,120,122,125))
-
 ggplot(cpue,aes(x=set.cpue, col = Gear, fill = Gear)) + geom_histogram(alpha=0.5) +
   xlab("set cpue")
 ggplot(cpue,aes(x=sub.cpue, col = Gear, fill = Gear)) + geom_histogram(alpha=0.5) +
@@ -184,43 +204,49 @@ ggplot(data=cpue_comp, aes(x=Gear, y=set.cpue, color = Gear, fill = Gear)) +
   ylab("Fish per set") +
   facet_wrap(~Station.No)
 
-ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Pot.Type.1, color = Pot.Type.1, fill = Pot.Type.1))+
+ggplot(data=cpue_comp, mapping=aes(x=Pot.Type.1 , y=sub.cpue, color = Pot.Type.1, fill = Pot.Type.1))+
   geom_bar(stat = "summary", fun = "mean") +
-  coord_flip() + xlab("Fish per skate/pot") +
+  xlab("Fish per skate/pot") +
   facet_wrap(~Station.No)
 
-ggplot(data=cpue_comp, mapping=aes(x=set.cpue, y=Gear, fill = Gear))+geom_boxplot() +
+ggplot(data=set_cpue, mapping=aes(x=Gear, y=cpue, fill = Gear),alpha=0.7)+
+  geom_boxplot() +
+  #geom_violin() +
+  geom_jitter(width=0.1, height=0, col="black", size=2, alpha=0.5) +
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
-  coord_flip() + xlab("Fish per set")
+  xlab("Fish per set")
 
 #ggplot(data=cpue_comp, mapping=aes(x=set.cpue, y=Pot.Type.1, fill = Pot.Type.1))+geom_boxplot() +
 #  stat_summary(fun = "mean", geom = "point", shape = 8,
 #               size = 2, color = "black")  +
 #  coord_flip() + xlab("Fish per set")
 
-ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Gear, fill = Gear))+geom_boxplot() +
+#ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Gear, fill = Gear))+geom_boxplot() +
+#  stat_summary(fun = "mean", geom = "point", shape = 8,
+#               size = 2, color = "black")  +
+#  coord_flip() + xlab("Fish per skate or pot")
+
+ggplot(data=pot_skate_cpue, mapping=aes(x=Pot.Type.1, y=mean_cpue, fill = Pot.Type.1))+
+  geom_boxplot(outlier.shape=NA) +
+  #geom_violin()+
+  geom_jitter(width=0.1, height=0, col="black", size=2, alpha=0.5) +
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
-  coord_flip() + xlab("Fish per skate or pot")
+  xlab("Fish per skate or pot")           
+  
 
-ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Pot.Type.1, fill = Pot.Type.1))+geom_boxplot() +
+ggplot(data=cpue_comp, mapping=aes(x=Gear, y=set.cpue, fill = Gear))+
+  geom_boxplot() +
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
-  coord_flip() + xlab("Fish per skate or pot")
-
-
-
-ggplot(data=cpue_comp, mapping=aes(x=set.cpue, y=Gear, fill = Gear))+geom_boxplot() +
-  stat_summary(fun = "mean", geom = "point", shape = 8,
-               size = 2, color = "black")  +
-  coord_flip() + xlab("Fish per set") +
+  xlab("Fish per set") +
   facet_wrap(~Substrate)
 
-ggplot(data=cpue_comp, mapping=aes(x=set.cpue, y=Gear, fill = Gear))+geom_boxplot() +
+ggplot(data=cpue_comp, mapping=aes(x=Gear, y=set.cpue, fill = Gear))+geom_boxplot() +
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
-  coord_flip() + xlab("Fish per set") +
+  xlab("Fish per set") +
   facet_wrap(~G.Stat.Area)
 
 ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Pot.Type.1, fill = Pot.Type.1))+geom_boxplot() +
@@ -229,11 +255,11 @@ ggplot(data=cpue_comp, mapping=aes(x=sub.cpue, y=Pot.Type.1, fill = Pot.Type.1))
   coord_flip() + xlab("Fish per skate/pot") +
   facet_wrap(~G.Stat.Area)
 
-ggplot(cpue_comp, aes(soak.time, sub.cpue, col=Pot.Type.1, fill = Pot.Type.1)) + geom_point(shape = 2) + 
-  geom_smooth(size = 2, se = TRUE, method = "glm")  #"lm", "glm", "gam", "loess"
+#ggplot(cpue_comp, aes(soak.time, sub.cpue, col=Pot.Type.1, fill = Pot.Type.1)) + geom_point(shape = 2) + 
+#  geom_smooth(size = 2, se = TRUE, method = "glm")  #"lm", "glm", "gam", "loess"
 
-ggplot(cpue_comp, aes(Depth, sub.cpue, col=Pot.Type.1, fill = Pot.Type.1)) + geom_point(shape = 2) + 
-  geom_smooth(size = 2, se = TRUE, method = "loess")
+#ggplot(cpue_comp, aes(Depth, sub.cpue, col=Pot.Type.1, fill = Pot.Type.1)) + geom_point(shape = 2) + 
+#  geom_smooth(size = 2, se = TRUE, method = "loess")
 
 ggplot(cpue_comp, aes(soak.time, set.cpue, col=Gear, fill = Gear)) + geom_point(shape = 2) + 
   geom_smooth(size = 2, se = TRUE, method = "glm")  #"lm", "glm", "gam", "loess"
@@ -243,7 +269,7 @@ ggplot(cpue_comp, aes(Depth, set.cpue, col=Gear, fill = Gear)) + geom_point(shap
 
 plot(data=cpue_comp, soak.time ~ Depth); abline(lm(data=cpue_comp, soak.time ~ Depth))
 
-mod<-bam(data = cpue_comp, sub.cpue ~ s(G.Stat.Area, bs='re') + s(Effort.No, bs = 're') +
+mod<-bam(data = cpue_comp, set.cpue ~ s(G.Stat.Area, bs='re') + s(Station.No, bs = 're') +
            s(soak.time, k=3, m=1) + s(Depth, k=3) + Pot.Type.1,
          gamma=1.4)
 summary(mod) 
@@ -253,7 +279,7 @@ plot(mod)
 #mod<-lmer(data = cpue_comp, sub.cpue ~ s(G.Stat.Area, bs='re') +
 #           s(soak.time, k=3, m=1) + s(Depth, k=3) + Pot.Type.1)
 
-lmer <-lmer(data = cpue_comp, sub.cpue ~ soak.time*Depth*Pot.Type.1*(1|G.Stat.Area)*(1|Effort.No))
+lmer <-lmer(data = cpue_comp, set.cpue ~ soak.time*Depth*Pot.Type.1*(1|G.Stat.Area))
 help('isSingular')
 summary(lmer)
 anova(lmer)
@@ -279,12 +305,11 @@ setMethod('getfit', 'merMod', function(object, ...) {
   cbind(summ1, df=rep(10000,length(fixef(object))))
 })
 
-old<-Sys.time()
 runmodels<-glmulti(sub.cpue ~ soak.time*Depth*Pot.Type.1,#s(set_depth, k=4), 
                        data=cpue_comp,
                        method="h",imm=0.5, sexrate=0.1, crit=aicc , deltaM=0.01, 
                        conseq=20, marginality=T, maxsize=5, confsetsize=17, plotty=T,
-                       level=2, fitfunc=lmer.glmulti, random="+(1|G.Stat.Area)+(1|Effort.No)"); Sys.time() - old
+                       level=2, fitfunc=lmer.glmulti, random="+(1|G.Stat.Area)+(1|Station.No)")
 coef.glmulti(runmodels)
 plot(runmodels,type="s")
 
@@ -298,7 +323,7 @@ simp<-glmulti(sub.cpue ~ soak.time*Depth*Pot.Type.1,#s(set_depth, k=4),
                    data=cpue_comp,
                    method="h",imm=0.5, sexrate=0.1, crit=aicc , deltaM=0.01, 
                    conseq=20, marginality=T, maxsize=5, confsetsize=17, plotty=T,
-                   level=1, fitfunc=lmer.glmulti, random="+(1|G.Stat.Area)+(1|Effort.No)")
+                   level=1, fitfunc=lmer.glmulti, random="+(1|G.Stat.Area)+(1|Station.No)")
 coef.glmulti(simp)
 plot(simp,type="s")
 
