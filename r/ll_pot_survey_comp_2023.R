@@ -8,7 +8,7 @@
 ##
 ################################################################################
 
-library(mosaic)
+{library(mosaic)
 library(tidyverse)
 library(tidyr)
 library(lubridate)
@@ -18,7 +18,7 @@ library(ggthemes)
 library(GGally)
 library(mgcViz)
 library(mgcv)
-library(lme4)
+library(lme4)}
 
 ll_bio<-read.csv("data/survey/2023 SSEI LL Survey Bio Data.csv")
 ll_set<-read.csv("data/survey/2023 SSEI LL Survey Set Data.csv")
@@ -139,8 +139,9 @@ cpue<-rbind(ll_cpue %>% select(Trip.No, Adfg.No, Effort.No, Subset.No, G.Stat.Ar
   mutate(soak.time = hm(Soak)@hour+hm(Soak)@minute/60)
 
 str(cpue)
-str(hm(cpue$Soak)[1])
-hm(cpue$Soak)[1]@hour+hm(cpue$Soak)[1]@minute/60
+
+eg<-cpue %>% filter(Station.No == 12)
+View(eg)
 #-------------------------------------------------------------------------------
 colnames(bios)
 
@@ -249,20 +250,20 @@ summary(mod)
 plot(mod)
 
 
-mod<-lmer(data = cpue_comp, sub.cpue ~ s(G.Stat.Area, bs='re') +
-           s(soak.time, k=3, m=1) + s(Depth, k=3) + Pot.Type.1,
-         gamma=1.4)
+#mod<-lmer(data = cpue_comp, sub.cpue ~ s(G.Stat.Area, bs='re') +
+#           s(soak.time, k=3, m=1) + s(Depth, k=3) + Pot.Type.1)
 
 lmer <-lmer(data = cpue_comp, sub.cpue ~ soak.time*Depth*Pot.Type.1*(1|G.Stat.Area)*(1|Effort.No))
+help('isSingular')
 summary(lmer)
 anova(lmer)
 
-library(arm)
+{library(arm)
 library(plyr)
 library(MuMIn)   #r.squaredGLMM(object)
 
 library(glmulti)
-library(AICcmodavg)
+library(AICcmodavg)}
 
 
 lmer.glmulti <- function (formula, data, random = "", ...) {
