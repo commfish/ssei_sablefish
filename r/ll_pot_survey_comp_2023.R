@@ -157,7 +157,7 @@ cpue_comp %>% group_by(Station.No,Pot.Type.1) %>%
 pot_skate_cpue %>% group_by(Pot.Type.1) %>%
   dplyr::summarize(sets = n(),
                    cpue = mean(mean_cpue),
-                   mean_std = sqrt(sum(std)/sets),
+                   mean_std = sqrt(sum(std^2)/sets),
                    cpue_lo95 = cpue - 1.96*mean_std,
                    cpue_hi95 = cpue + 1.96*mean_std) -> mean_potskate_cpue
 
