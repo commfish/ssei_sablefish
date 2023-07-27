@@ -183,6 +183,9 @@ ggplot(bios, aes(x = Length, fill = Gear)) +
   geom_vline(xintercept=mean(bios$Length[bios$Gear == "ll"]), col = cols[1]) +
   geom_vline(xintercept=mean(bios$Length[bios$Gear == "pot"], na.rm=T), col = cols[2]) 
 
+getwd()
+ggsave(paste0("figures/2023/length_distr_pot_vs_ll.png"), dpi = 300, height = 5, width = 5, units = "in")
+
 ggplot(bios, aes(x = Length, fill = Pot.Type.1)) +
   geom_density(alpha = 0.5) + 
   scale_fill_manual(values = cols) +
@@ -190,14 +193,19 @@ ggplot(bios, aes(x = Length, fill = Pot.Type.1)) +
   geom_vline(xintercept=mean(bios$Length[bios$Pot.Type.1 == "Longline"], na.rm=T), col = cols[2]) +
   geom_vline(xintercept=mean(bios$Length[bios$Pot.Type.1 == "Sm. Slinky"], na.rm=T), col = cols[3])
 
+ggsave(paste0("figures/2023/length_distr_pot_vs_ll_2.png"), dpi = 300, height = 5, width = 5, units = "in")
 
 colnames(cpue)
 
-ggplot(cpue,aes(x=set.cpue, col = Gear, fill = Gear)) + geom_histogram(alpha=0.5) +
+ggplot(cpue,aes(x=set.cpue, col = Gear, fill = Gear)) + 
+  geom_density(alpha=0.5) + #, aes(y=..count../sum(..count..))) +
   xlab("set cpue")
-ggplot(cpue,aes(x=sub.cpue, col = Gear, fill = Gear)) + geom_histogram(alpha=0.5) +
+ggplot(cpue,aes(x=sub.cpue, col = Gear, fill = Gear)) + 
+  geom_density(alpha=0.5) + #, aes(y = stat(count / sum(count)))) +
   xlab("Skate/Pot cpue")
-ggplot(cpue,aes(x=sub.cpue, col = Pot.Type.1, fill = Pot.Type.1)) + geom_histogram(alpha=0.5) +
+ggplot(cpue,aes(x=sub.cpue, col = Pot.Type.1, fill = Pot.Type.1)) + 
+  #geom_histogram(alpha=0.5) +
+  geom_density(alpha=0.5) +
   xlab("Skate/Pot cpue")
 
 ggplot(cpue_comp,aes(x=sub.cpue, col = Gear, fill = Gear)) + geom_histogram(alpha=0.5) +
@@ -211,10 +219,14 @@ ggplot(data=cpue_comp, aes(x=Gear, y=set.cpue, color = Gear, fill = Gear)) +
   ylab("Fish per set") +
   facet_wrap(~Station.No)
 
+ggsave(paste0("figures/2023/cpue_pot_vs_ll_by_station.png"), dpi = 300, height = 5, width = 5, units = "in")
+
 ggplot(data=cpue_comp, mapping=aes(x=Pot.Type.1 , y=sub.cpue, color = Pot.Type.1, fill = Pot.Type.1))+
   geom_bar(stat = "summary", fun = "mean") +
   xlab("Fish per skate/pot") +
   facet_wrap(~Station.No)
+
+ggsave(paste0("figures/2023/cpue_pot_vs_ll_by_station2.png"), dpi = 300, height = 5, width = 5, units = "in")
 
 ggplot(data=set_cpue, mapping=aes(x=Gear, y=cpue, fill = Gear),alpha=0.7)+
   geom_boxplot() +
@@ -223,6 +235,9 @@ ggplot(data=set_cpue, mapping=aes(x=Gear, y=cpue, fill = Gear),alpha=0.7)+
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
   xlab("Fish per set")
+
+ggsave(paste0("figures/2023/cpue_byset_pot_vs_ll.png"), dpi = 300, height = 5, width = 5, units = "in")
+
 
 #ggplot(data=cpue_comp, mapping=aes(x=set.cpue, y=Pot.Type.1, fill = Pot.Type.1))+geom_boxplot() +
 #  stat_summary(fun = "mean", geom = "point", shape = 8,
@@ -241,7 +256,7 @@ ggplot(data=pot_skate_cpue, mapping=aes(x=Pot.Type.1, y=mean_cpue, fill = Pot.Ty
   stat_summary(fun = "mean", geom = "point", shape = 8,
                size = 2, color = "black")  +
   xlab("Fish per skate or pot")           
-  
+ggsave(paste0("figures/2023/cpue_byset_2pot_vs_ll.png"), dpi = 300, height = 5, width = 5, units = "in") 
 
 ggplot(data=cpue_comp, mapping=aes(x=Gear, y=set.cpue, fill = Gear))+
   geom_boxplot() +
@@ -272,7 +287,7 @@ ggplot(cpue_comp, aes(soak.time, set.cpue, col=Gear, fill = Gear)) + geom_point(
   geom_smooth(size = 2, se = TRUE, method = "glm")  #"lm", "glm", "gam", "loess"
 
 ggplot(cpue_comp, aes(Depth, set.cpue, col=Gear, fill = Gear)) + geom_point(shape = 2) + 
-  geom_smooth(size = 2, se = TRUE, method = "loess")
+  geom_smooth(size = 2, se = TRUE, method = "glm")
 
 plot(data=cpue_comp, soak.time ~ Depth); abline(lm(data=cpue_comp, soak.time ~ Depth))
 
