@@ -3,7 +3,7 @@
 # Includes: survey and fishery CPUE and summary of biological data
 # Authors:  Andrew Olson (andrew.olson@alaska.gov); and Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
 # Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@alaska.gov)
-# Last modified: April 16, 2023   # first run for 2023
+# Last modified: April 19, 2024   # first run for 2024
 
 # set up ----
 source('r/helper.r') 
