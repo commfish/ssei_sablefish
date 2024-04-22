@@ -10,19 +10,22 @@ source('r/helper.r')
 library(janitor) 
 
 # Create figure and output folders
-YEAR <- 2023 # assessment year
+YEAR <- 2024 # assessment year
 fig_path <- paste0('figures/', YEAR) # folder to hold all figures for a given year
 dir.create(fig_path) # creates YEAR subdirectory inside figures folder
 output_path <- paste0('output/', YEAR) # output and results
 dir.create(output_path) 
 
+
+
 # data ----
 
 # harvest by year and permit type AHO from management memo
-ssei_aho <- data.frame(year = c(1985:2022), # change most recent year to 2023
+ssei_aho <- data.frame(year = c(1985:2023), # change most recent year to 2023
                        aho = c(rep(790000, 13), 632000, 720000, rep(696000, 9),
                                634000, 634000, 583280, 583280, 583280, 536618, 
-                               536618, 482956, 516763, 578774, 590349, 572639, 601271, 643360))  #need to update with AHO for 2023
+                               536618, 482956, 516763, 578774, 590349, 572639, 601271, 
+                               643360, 643360))  #need to update with AHO for new year
 
 # Get all fish ticket data from OceanAK query for sablefish in SSEI management area
 # and exclude fish tickets from test fishery = 43 and Annette Island Fisheries; remove trawl gear
@@ -49,7 +52,7 @@ read_csv("data/fishery/raw_data/ssei longline sablefish lbs per set new.csv") %>
 # need to exclude 2021 experimental set 18 station 99
 read_csv("data/survey/raw_data/ssei survey hook accounting new.csv", guess_max = 50000) %>% 
   clean_names()  %>%
-  filter(station_no != 99) -> srv_cpue
+  filter(station_no != 99) -> srv_data
 
 # Data from OceanAK query for longline survey bio data in SSEI 
 # need to exclude 2021 experimental set 
@@ -177,37 +180,35 @@ fishery_df %>%
 # can only keep 2020, 2021, 2022 due to confidentiality with POTS - check LL 
 
 
-#### THIS IS WRONG - DO NOT USE THIS  ####
 # pot logbook data 
-#pot_log_df %>% 
-  #filter(year > 2019) %>%  
-  #filter(year != omit_yrs$year) %>% # not using this because of confidentiality issues for all years < 2020
-  #group_by(year, trip_number) %>% 
-  #mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
-  #summarize(round_pounds = sum(pounds),
-   #         n_pots = sum(number_of_pots)) %>% 
-  #mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
-  #summarise(sd = sd(cpue),
-  #         cpue = mean(cpue),
-   #       n = n(),
-    #        se = sd / sqrt(n)) %>% 
-  #mutate(ll = cpue - 2 * se,
-   #      ul = cpue + 2 * se) -> pot_cpue 
+pot_log_df %>%
+filter(year > 2019) %>%
+group_by(year, trip_number) %>%
+mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
+summarize(round_pounds = sum(pounds),
+        n_pots = sum(number_of_pots)) %>%
+mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
+summarise(sd = sd(cpue),
+        cpue = mean(cpue),
+      n = n(),
+       se = sd / sqrt(n)) %>%
+mutate(ll = cpue - 2 * se,
+     ul = cpue + 2 * se) -> pot_cpue
 
-#write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
+write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
 
-#pot_cpue %>% ggplot(aes(year, cpue)) +
- # geom_point() +
-  #geom_line() +
-  #geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
-  #ylab("CPUE (round lbs/pot)\n") +
-  #xlab('\nYear') +
+pot_cpue %>% ggplot(aes(year, cpue)) +
+  geom_point() +
+  geom_line() +
+  geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
+  ylab("CPUE (round lbs/pot)\n") +
+  xlab('\nYear') +
   #scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
-  #theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
-  #expand_limits(y = 0)
+  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
+  expand_limits(y = 0)
 
-#ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5, 
-#height = 5, units = "in", dpi = 200)
+ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5,
+height = 5, units = "in", dpi = 200)
 
 
 ##################################################################################################
@@ -222,7 +223,7 @@ fishery_df %>%
 # Vaughn 2018-03-06: Sets (aka subsets with 12 or more invalid hooks are subset
 # condition code "02" or invalid)
 
-srv_cpue <- srv_cpue %>% 
+srv_cpue <- srv_data %>% 
   dplyr::select(year, trip_no, set = set_no, skate = subset_no,
                 skate_condition_cde = subset_condition_code, 
                 Stat = g_stat_area, bare = hooks_number_bare,
@@ -235,18 +236,15 @@ srv_cpue <- srv_cpue %>%
 # data checks 
 
 # TODO: these should be changed to condition code 2. 
-#srv_cpue %>% filter(skate_condition_cde %in% c(1,3) & invalid > 12) 
-#srv_cpue <- srv_cpue %>% # Fix manually for now
- # mutate(skate_condition_cde = ifelse(skate_condition_cde %in% c(1,3) & invalid > 12, 
-                                    #  2, skate_condition_cde)) 
+srv_cpue %>% filter(skate_condition_cde %in% c(1,3) & invalid > 12) 
+srv_cpue <- srv_cpue %>% # Fix manually for now
+  mutate(skate_condition_cde = ifelse(skate_condition_cde %in% c(1,3) & invalid > 12, 
+                                      2, skate_condition_cde)) 
 
-#srv_cpue %>% filter(no_hooks < 0) # there should be none
+srv_cpue %>% filter(no_hooks < 0) # there should be none
 
+srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there should be none
 
-#srv_cpue %>% filter(year > 1997 & c(is.na(no_hooks) | no_hooks == 0)) # there should be none, there is one.
-# year trip_no   set skate skate_condition_cde   Stat  bare  bait invalid no_hooks sablefish
-# <dbl>   <dbl> <dbl> <dbl>               <dbl>  <dbl> <dbl> <dbl>   <dbl>    <dbl>     <dbl>
-#   1  2016       2     6    16                   2 325431    NA    NA      NA        0         0
 
 # TODO this needs to be fixed in database: bare, bait, invalid should all be 0,
 # skate_condition_cde should be 2. Fixed manually for now:
@@ -258,7 +256,7 @@ str(srv_cpue)
 # Get subset for cpue analysis, standardize hooks
 srv_cpue <- srv_cpue %>% 
   filter(year >= 1998, 
-         skate_condition_cde %in% c("01", "03")) %>% 
+         skate_condition_cde %in% c("1", "3")) %>% 
   replace_na(list(bare = 0, bait = 0, invalid = 0, sablefish = 0)) %>% 
   mutate(no_hooks = no_hooks - invalid, # remove invalid hooks
          std_hooks = ifelse(year %in% c(1998, 1999), 2.2 * no_hooks * (1 - exp(-0.57 * (64 * 0.0254))),
@@ -312,21 +310,11 @@ ggplot(data = srv_cpue) +
   geom_ribbon(aes(year, ymin = cpue - sd, ymax = cpue + sd),
               alpha = 0.2) +
   scale_x_continuous(breaks = axis$breaks, labels = axis$labels) + 
-  lims(y = c(0, 0.35)) +
+  lims(y = c(0, 0.40)) +
   labs(x = NULL, y = "Survey CPUE (number per hook)\n") 
 
 ggsave(paste0(fig_path,"/ssei_ll_survey_cpue.png"), 
        dpi = 300, width = 6.5, height = 5, units = "in")
-
-# Show how/where old code was wrong:
-#tst <- srv_cpue$cpue
-#(tmp <- mean(log(tst+1)))
-#exp(tmp-1) # see how the scale is now similar to the figs you had? this transformation isn't needed and was done incorrectly
-# If you ever wanted a log transformation adding 1 (i.e. if data included 0),
-# here's how to do it correctly:
-#(tmp <- log(mean(tst)+1))
-#exp(tmp)-1 # will equal mean(tst)
-#mean(tst)
 
 
 ##################################################################################################
@@ -362,7 +350,7 @@ ll_set_df %>%
   gather(Variable, Count, -year) %>%  
   distinct() %>%  
   mutate(Gear = "Longline") %>% 
-  filter(year <= 2022) -> longline_trips 
+  filter(year <= 2023) -> longline_trips 
 
 longline_trips %>% 
   ggplot(aes(year, Count)) +
@@ -392,7 +380,7 @@ pot_log_df %>%
   gather(Variable, Count, -year) %>%  
   distinct() %>%  
   mutate(Gear = "Pot") %>% 
-  filter(year <= 2022) -> pot_trips 
+  filter(year <= 2023) -> pot_trips 
 
   
 total_trips <- full_join(pot_trips, longline_trips) 
