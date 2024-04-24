@@ -3,7 +3,7 @@
 # Includes: survey and fishery CPUE and summary of biological data
 # Authors:  Andrew Olson (andrew.olson@alaska.gov); and Rhea Ehresmann (rhea.ehresmann@alaska.gov) 
 # Code adapted from J.S. NSEI Sablefish assessment: Jane Sullivan (jane.sullivan@alaska.gov)
-# Last modified: April 19, 2024   # first run for 2024
+# Last modified: April 23, 2024   # run for 2024
 
 # set up ----
 source('r/helper.r') 
@@ -16,7 +16,11 @@ dir.create(fig_path) # creates YEAR subdirectory inside figures folder
 output_path <- paste0('output/', YEAR) # output and results
 dir.create(output_path) 
 
-
+##THEMES FOR GRAPHS##
+loadfonts(device="win")
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+theme_set(theme_bw(base_size=14,base_family='Times New Roman')
+          +theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()))
 
 # data ----
 
@@ -84,13 +88,12 @@ ggplot(harvest, aes(year, total_harvest)) +
   geom_line(aes(y = aho), linetype = 3, linewidth = 1) +
   ylab("Harvest (round lbs)\n") + xlab("\nYear") +
   scale_fill_grey() + # use grey-scale for the report
-  #scale_fill_manual(values= cbPalette) + scale_color_manual(values = cbPalette) +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
   scale_y_continuous(label = scales::comma) +
   theme(legend.position = c(0.75, 0.85), legend.title = element_blank()) 
   
 
-ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 6.5, height = 5, units = "in", dpi = 200)
+ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 8, height = 5.5, units = "in", dpi = 200)
 
 
 ##################################################################################################
@@ -108,7 +111,7 @@ fishery_df %>%
   filter(n_boats >= 3) -> harvest_gear
 
 
-xaxis <- FNGr::tickr(harvest, year, 3)
+xaxis <- FNGr::tickr(harvest, year, 5)
 
 ggplot(harvest_gear, aes(fill = gear_name, x=year, y=total_harvest)) + 
   geom_bar(stat = "identity", position = "stack") +
@@ -121,7 +124,7 @@ ggplot(harvest_gear, aes(fill = gear_name, x=year, y=total_harvest)) +
   scale_y_continuous(label = scales::comma)+
   theme(legend.position = c(0.75, 0.85), legend.title = element_blank()) 
 
-ggsave(paste0(fig_path, '/ssei_fishery_harvest_gear_Confidential.png'), width = 6.5, height = 5, units = "in", dpi = 200)
+ggsave(paste0(fig_path, '/ssei_fishery_harvest_gear_Confidential.png'), width = 7, height = 5, units = "in", dpi = 200)
 
 # Harvest distribution by area ---- not in report, look at distribution
 unique(fishery_df$stat_area)
@@ -139,7 +142,7 @@ fishery_df %>%
                                              335533, 335601, 335602, 335603, 335632, 335633, 345535,
                                              345604) ~ "Sumner Strait",
                           TRUE ~ "Other")) %>% 
-  group_by(year, gear_name, Area) %>% 
+  group_by(year, Area) %>% 
   summarise(total_harvest = sum(whole_weight_sum), 
             n_boats = n_distinct(adfg),
             permit_count = n_distinct(cfec)) %>% 
@@ -150,6 +153,46 @@ fishery_df %>%
 
 write_csv(area_harvest, paste0(output_path, "/harvest_byarea.csv")) # save output
 
+xaxis <- FNGr::tickr(harvest, year, 3)
+
+ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
+  geom_bar(stat = "identity", color = "black") +
+  scale_fill_grey() +
+  ylab("Total Harvest (round lbs)\n") + 
+  xlab("\nYear") +
+  scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 900000, 100000)) +
+  theme(legend.position = c(0.63, 0.88), legend.title = element_blank())  
+
+ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution_area.png"), width = 8, 
+       height = 6.5, units = "in", dpi = 200)
+
+# Harvest distribution by area and gear 
+fishery_df %>% 
+  filter(stat_area != 1065, 
+         mgt_area == "SSEI", year >= 1997) %>%
+  mutate(Area = case_when(stat_area %in% c(325431, 315431, 325401, 315401) ~ "Dixon Entrance",
+                          stat_area %in% c(305431, 305501, 305502, 305503, 315432, 315501,
+                                           315502, 315503, 315504, 325433, 325501, 325502,
+                                           325503, 325504) ~ "Lower Clarence Strait",
+                          stat_area %in% c(305531, 305532, 315531, 315532, 325531, 325532,
+                                           325533, 335506, 335534, 335535) ~ "Upper Clarence Strait",
+                          stat_area %in% c(315600, 325601, 325602, 325603, 325604, 325631, 325632,
+                                           335533, 335601, 335602, 335603, 335632, 335633, 345535,
+                                           345604) ~ "Sumner Strait",
+                          TRUE ~ "Other")) %>% 
+  group_by(year, gear_name, Area) %>% 
+  summarise(total_harvest = sum(whole_weight_sum), 
+            n_boats = n_distinct(adfg),
+            permit_count = n_distinct(cfec)) %>% 
+  mutate(Area = factor(Area, 
+                       levels = c("Sumner Strait", "Upper Clarence Strait", 
+                                  "Lower Clarence Strait", "Dixon Entrance", "Other"))) %>%  
+  filter(n_boats >= 3) -> area_harvest 
+
+write_csv(area_harvest, paste0(output_path, "/harvest_byareagear.csv")) # save output
+
+xaxis <- FNGr::tickr(harvest, year, 3)
 ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   geom_bar(stat = "identity", color = "black") +
   scale_fill_grey() +
@@ -157,11 +200,12 @@ ggplot(area_harvest, aes(year, total_harvest, fill = Area)) +
   xlab("\nYear") +
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
   scale_y_continuous(labels = scales::comma, breaks = seq(0, 700000, 100000)) +
-  theme(legend.position = c(0.75, 0.88), legend.title = element_blank()) + 
+  theme(legend.position = c(0.7, 0.8), legend.title = element_blank())  +
   facet_wrap(~gear_name)
 
-ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution_gear.png"), width = 6.5, 
+ggsave(paste0(fig_path,"/SSEI_Fishery_Harvest_Distribution_gear.png"), width = 8.5, 
        height = 6, units = "in", dpi = 200)
+
 
 
 ##################################################################################################
