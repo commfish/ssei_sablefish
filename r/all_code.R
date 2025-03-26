@@ -16,13 +16,19 @@ dir.create(fig_path) # creates YEAR subdirectory inside figures folder
 output_path <- paste0('output/', YEAR) # output and results
 dir.create(output_path) 
 
+
+##THEMES FOR GRAPHS##
+loadfonts(device="win")
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+theme_set(theme_bw(base_size=14,base_family='Times New Roman')
+          +theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()))
 # data ----
 
 # harvest by year and permit type AHO from management memo
-ssei_aho <- data.frame(year = c(1985:2022), # change most recent year to 2023
+ssei_aho <- data.frame(year = c(1985:2023), # change most recent year to 2023
                        aho = c(rep(790000, 13), 632000, 720000, rep(696000, 9),
                                634000, 634000, 583280, 583280, 583280, 536618, 
-                               536618, 482956, 516763, 578774, 590349, 572639, 601271, 643360))  #need to update with AHO for 2023
+                               536618, 482956, 516763, 578774, 590349, 572639, 601271, 643360, 643360))  #need to update with AHO for 2023
 
 # Get all fish ticket data from OceanAK query for sablefish in SSEI management area
 # and exclude fish tickets from test fishery = 43 and Annette Island Fisheries; remove trawl gear
@@ -78,16 +84,18 @@ xaxis <- FNGr::tickr(harvest, year, 3)
 
 ggplot(harvest, aes(year, total_harvest)) + 
   geom_bar(stat = "identity", aes(fill = mgmt_type)) +
-  geom_line(aes(y = aho), linetype = 3, linewidth = 1) +
+  geom_line(aes(y = aho, color = "Annual Harvest Objective (AHO)"), stat = "identity", linetype = 9, linewidth = 1) +
   ylab("Harvest (round lbs)\n") + xlab("\nYear") +
-  scale_fill_grey() + # use grey-scale for the report
-  #scale_fill_manual(values= cbPalette) + scale_color_manual(values = cbPalette) +
+  scale_fill_grey() + # use grey-scale for the report 
+  scale_color_manual(name = NULL, values = "black", labels = "Annual Harvest Objective (AHO)") + 
   scale_x_continuous(breaks = xaxis$breaks, labels=xaxis$labels) +
   scale_y_continuous(label = scales::comma) +
-  theme(legend.position = c(0.75, 0.85), legend.title = element_blank()) 
-  
+  theme(legend.position = c(0.75, 0.85), legend.title = element_blank(), 
+        legend.box.just = "left", 
+        legend.margin = margin(1,1,1,1), 
+        legend.spacing.y = unit(0, "mm")) 
 
-ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 6.5, height = 5, units = "in", dpi = 200)
+ggsave(paste0(fig_path, '/ssei_fishery_harvest.png'), width = 8, height = 5.5, units = "in", dpi = 200)
 
 
 ##################################################################################################
@@ -170,44 +178,42 @@ fishery_df %>%
   filter(gear_name == 'Pot') %>%
   group_by(year) %>% 
   summarize(n_tickets = n_distinct(fish_ticket_number), 
-         n_permits = n_distinct(cfec),
-         n_boats = n_distinct(adfg), 
-         n_proc = n_distinct(processor)) %>% 
+            n_permits = n_distinct(cfec),
+            n_boats = n_distinct(adfg), 
+            n_proc = n_distinct(processor)) %>% 
   filter(n_boats >= 3, year > 1995) -> keep_yrs  
 # can only keep 2020, 2021, 2022 due to confidentiality with POTS - check LL 
 
 
-#### THIS IS WRONG - DO NOT USE THIS  ####
 # pot logbook data 
-#pot_log_df %>% 
-  #filter(year > 2019) %>%  
-  #filter(year != omit_yrs$year) %>% # not using this because of confidentiality issues for all years < 2020
-  #group_by(year, trip_number) %>% 
-  #mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
-  #summarize(round_pounds = sum(pounds),
-   #         n_pots = sum(number_of_pots)) %>% 
-  #mutate(cpue = round_pounds / n_pots) %>%  # if you view this you can see a huge variation in pot cpue, some impossible
-  #summarise(sd = sd(cpue),
-  #         cpue = mean(cpue),
-   #       n = n(),
-    #        se = sd / sqrt(n)) %>% 
-  #mutate(ll = cpue - 2 * se,
-   #      ul = cpue + 2 * se) -> pot_cpue 
+pot_log_df %>%
+  filter(year > 2019) %>%
+  group_by(year, trip_number) %>%
+  mutate(pounds = ifelse(is.na(pounds), numbers * 5.0, pounds)) %>%  # avg weight from port sampling data - pot trips only from 2019-2021
+  summarize(round_pounds = sum(pounds),
+            n_pots = sum(number_of_pots)) %>% 
+  mutate(cpue = round_pounds / n_pots) %>%  
+  summarise(sd = sd(cpue),
+            cpue = mean(cpue),
+            n = n(),
+            se = sd / sqrt(n)) %>%
+  mutate(ll = cpue - 2 * se,
+         ul = cpue + 2 * se) -> pot_cpue
 
-#write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
+write_csv(pot_cpue, paste0(output_path, "/pot_cpue.csv")) # save output
 
-#pot_cpue %>% ggplot(aes(year, cpue)) +
- # geom_point() +
-  #geom_line() +
-  #geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
-  #ylab("CPUE (round lbs/pot)\n") +
-  #xlab('\nYear') +
-  #scale_x_continuous(breaks = xaxis$breaks, labels = xaxis$labels) +
-  #theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
-  #expand_limits(y = 0)
+pot_cpue %>% ggplot(aes(year, cpue)) +
+  geom_point() +
+  geom_line() +
+  geom_ribbon(aes(ymin = ll, ymax = ul), alpha=0.2) +
+  ylab("Pot Fishery CPUE (round lbs/pot)\n") +
+  xlab('\nYear') +
+  scale_x_continuous(breaks = 2020:2022) +
+  theme(plot.margin = unit(c(0.5,1,0.5,0.5), "cm")) +
+  expand_limits(y = 0)
 
-#ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5, 
-#height = 5, units = "in", dpi = 200)
+ggsave(paste0(fig_path,"/pot_fishery_cpue.png"), width = 6.5,
+       height = 5, units = "in", dpi = 200)
 
 
 ##################################################################################################
@@ -515,8 +521,8 @@ rbind(
            sample_type == "Random", sex_code %in% c(1, 2), 
            age_readability_code %in% c(1, 2, 3)) %>% 
     mutate(Sex = case_when(sex_code == 1 ~ "Male",
-                         sex_code == 2 ~ 'Female',
-                         TRUE ~ 'Other'),
+                           sex_code == 2 ~ 'Female',
+                           TRUE ~ 'Other'),
            Source = "Longline fishery") %>% 
     select(Source, year, Sex, age),
   # pot gear
@@ -542,7 +548,7 @@ rbind(
                            Source == "Longline fishery" ~ "llfsh",
                            Source == "Pot fishery" ~ "potfsh" )) -> agecomp_df
 #agecomp_df %>% group_by(Source) %>% distinct(year) %>% View()
-  
+
 # Check that they sum to 1
 agecomp_df %>% 
   group_by(Source, Sex, year) %>% 
@@ -614,7 +620,7 @@ fish_lengths %>%
   filter(survey_type == "Longline", Sex != 'Other') %>% 
   ggplot(aes(length, year, group = year, fill = year)) + 
   geom_density_ridges(aes(point_fill = year, point_color = year),
-                       scale = 3, alpha = 0.3) +
+                      scale = 3, alpha = 0.3) +
   #geom_vline(xintercept = 61, linetype = 3) + #skip this line as it pertains more to NSEI - J.S. 04/01/2020
   xlim(35, 90) +
   xlab("\nLength (cm)") + 
@@ -648,8 +654,8 @@ svy_bio_df %>%
   filter(sex %in% c('Male', 'Female')) %>% 
   mutate(length = length_millimeters / 10) %>% 
   ggplot(aes(length, year, group = year, fill = year)) + 
-    geom_density_ridges(aes(point_fill = year, point_color = year),
-                        scale = 3, alpha = 0.3) +
+  geom_density_ridges(aes(point_fill = year, point_color = year),
+                      scale = 3, alpha = 0.3) +
   xlim(35, 90) +
   xlab("\nLength (cm)") + 
   ylab("Year\n") +
