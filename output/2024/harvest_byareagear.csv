@@ -1,0 +1,88 @@
+year,gear_name,Area,total_harvest,n_boats,permit_count
+1997,Longline,Dixon Entrance,221526.33,19,19
+1997,Longline,Lower Clarence Strait,227795,23,23
+1997,Longline,Sumner Strait,6073.14,5,5
+1997,Longline,Upper Clarence Strait,153391.1,15,16
+1998,Longline,Dixon Entrance,211157.23,17,17
+1998,Longline,Lower Clarence Strait,149913.57,19,20
+1998,Longline,Upper Clarence Strait,135172.84,10,11
+1999,Longline,Dixon Entrance,150884.21,14,13
+1999,Longline,Lower Clarence Strait,235091,19,18
+1999,Longline,Upper Clarence Strait,177147.09,13,14
+2000,Longline,Dixon Entrance,108610.28,10,10
+2000,Longline,Lower Clarence Strait,213070.06,16,19
+2000,Longline,Upper Clarence Strait,173713.93,13,16
+2001,Longline,Dixon Entrance,181623.72,10,11
+2001,Longline,Lower Clarence Strait,184393.4,15,18
+2001,Longline,Upper Clarence Strait,187163.04,11,13
+2002,Longline,Dixon Entrance,223598.99,11,15
+2002,Longline,Lower Clarence Strait,193673.6,14,18
+2002,Longline,Upper Clarence Strait,135963.63,9,11
+2003,Longline,Dixon Entrance,188664.25,10,13
+2003,Longline,Lower Clarence Strait,234502.66,15,18
+2003,Longline,Upper Clarence Strait,133935.88,8,9
+2004,Longline,Dixon Entrance,243734.36,11,17
+2004,Longline,Lower Clarence Strait,216205.84,16,20
+2004,Longline,Upper Clarence Strait,92335.79,8,9
+2005,Longline,Dixon Entrance,304674,12,17
+2005,Longline,Lower Clarence Strait,183811.86,11,13
+2005,Longline,Upper Clarence Strait,50765.57,4,4
+2006,Longline,Dixon Entrance,357075.2143,17,23
+2006,Longline,Lower Clarence Strait,164126.6565,14,17
+2006,Longline,Upper Clarence Strait,16610.3726,4,7
+2007,Longline,Dixon Entrance,353003.2941,15,23
+2007,Longline,Lower Clarence Strait,158429.4297,15,23
+2007,Longline,Upper Clarence Strait,21809.7274,4,5
+2008,Longline,Dixon Entrance,213892.7354,18,20
+2008,Longline,Lower Clarence Strait,285071.4511,20,22
+2008,Longline,Upper Clarence Strait,32901.8552,9,9
+2009,Longline,Dixon Entrance,281630.2242,19,21
+2009,Longline,Lower Clarence Strait,197376.5324,20,22
+2009,Longline,Upper Clarence Strait,45599.8027,7,8
+2010,Longline,Dixon Entrance,233566.84339999998,14,18
+2010,Longline,Lower Clarence Strait,183761.5878,16,19
+2010,Longline,Upper Clarence Strait,71120.4123,8,9
+2011,Longline,Dixon Entrance,235113.7954,14,16
+2011,Longline,Lower Clarence Strait,178088.3236,14,17
+2011,Longline,Upper Clarence Strait,58867.546800000004,7,9
+2012,Longline,Dixon Entrance,249875.5399,12,14
+2012,Longline,Lower Clarence Strait,142163.6637,11,16
+2012,Longline,Upper Clarence Strait,53639.2411,7,7
+2013,Longline,Dixon Entrance,237729.4964,14,17
+2013,Longline,Lower Clarence Strait,171406.9317,11,14
+2013,Longline,Upper Clarence Strait,20122.8114,6,7
+2014,Longline,Dixon Entrance,185447.255,10,13
+2014,Longline,Lower Clarence Strait,196163.2878,12,18
+2014,Longline,Upper Clarence Strait,43784.086,8,9
+2015,Longline,Dixon Entrance,198149.6438,11,15
+2015,Longline,Lower Clarence Strait,176549.6057,12,17
+2015,Longline,Upper Clarence Strait,67423.9918,8,10
+2016,Longline,Dixon Entrance,168015.2989,11,16
+2016,Longline,Lower Clarence Strait,174993.5468,10,17
+2016,Longline,Upper Clarence Strait,69764.0356,8,11
+2017,Longline,Dixon Entrance,170203.2041,8,11
+2017,Longline,Lower Clarence Strait,182621.3423,11,17
+2017,Longline,Upper Clarence Strait,68918.2139,7,10
+2018,Longline,Dixon Entrance,232411.3423,10,13
+2018,Longline,Lower Clarence Strait,158909.0911,9,14
+2018,Longline,Upper Clarence Strait,83694.2844,7,10
+2019,Longline,Dixon Entrance,168883.6733,9,12
+2019,Longline,Lower Clarence Strait,182698.1,8,13
+2019,Longline,Upper Clarence Strait,126934.4333,8,10
+2020,Longline,Dixon Entrance,66336.333,4,5
+2020,Longline,Lower Clarence Strait,184558.8883,5,12
+2020,Longline,Upper Clarence Strait,96583.2375,7,14
+2020,Pot,Lower Clarence Strait,78096.0052,3,6
+2020,Pot,Upper Clarence Strait,87447.8548,4,8
+2021,Longline,Dixon Entrance,20874.3165,5,5
+2021,Longline,Lower Clarence Strait,81964.2311,6,8
+2021,Longline,Upper Clarence Strait,8563.2444,4,5
+2021,Pot,Lower Clarence Strait,291655.778,8,17
+2021,Pot,Upper Clarence Strait,105381.40000000001,9,12
+2022,Pot,Dixon Entrance,48747.86,3,3
+2022,Pot,Lower Clarence Strait,278641.5,9,18
+2022,Pot,Upper Clarence Strait,219360.8,9,15
+2023,Longline,Sumner Strait,6749.2222,3,2
+2023,Pot,Dixon Entrance,46103.1748,3,5
+2023,Pot,Lower Clarence Strait,216050.4556,10,15
+2023,Pot,Upper Clarence Strait,95570.3785,6,7
