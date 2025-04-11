@@ -20076,6 +20076,7 @@ Year,Project,Trip No,Station No,Set No,Area Description,G Stat Area,Subset No,Su
 2020,Clarence Sablefish LL Survey,2,129,2,Cape Muzon,325401,23,Not Valid; orca,4,WHALE DEPREDATION SKATE INVALID  EE VERIFIED 6/3/20,45,7,24,0,0,10,0.222222222
 2020,Clarence Sablefish LL Survey,2,129,2,Cape Muzon,325401,24,Not Valid; orca,4,WHALE DEPREDATION SKATE INVALID  EE VERIFIED 6/3/20,45,4,37,1,0,0,0
 2020,Clarence Sablefish LL Survey,2,129,2,Cape Muzon,325401,25,Not Valid; orca,4,WHALE DEPREDATION SKATE INVALID  EE VERIFIED 6/3/20,45,7,32,0,0,2,0.044444444
+2020,Clarence Sablefish LL Survey,2020,,0,,      ,,,,,,,,,,,
 2021,Clarence Sablefish LL Survey,1,20,12,Point Davidson,315502,1,Valid,1,v ee 5/18/21,45,0,36,0,0,9,0.2
 2021,Clarence Sablefish LL Survey,1,20,12,Point Davidson,315502,2,Valid,1,v ee 5/18/21,44,0,29,2,0,7,0.159090909
 2021,Clarence Sablefish LL Survey,1,20,12,Point Davidson,315502,3,Valid,1,v ee 5/18/21,45,0,26,0,0,10,0.222222222
@@ -22128,9 +22129,734 @@ Year,Project,Trip No,Station No,Set No,Area Description,G Stat Area,Subset No,Su
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,17,Valid,1,Verified AB 05/26/23,45,0,15,0,0,25,0.555555556
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,18,Valid,1,Verified AB 05/26/23,45,3,11,0,0,23,0.511111111
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,19,Valid,1,Verified AB 05/26/23,45,3,14,0,0,20,0.444444444
-2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,20,Not Valid,2,"Missed skate, imvalid. Verified AB 05/26/23 6/28/23- Added 45 invalid hooks",45,0,0,45,0,,
+2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,20,Not Valid,2,"Missed skate, imvalid. Verified AB 05/26/23 6/28/23- Added 45 invalid hooks",45,0,0,45,0,0,0
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,21,Not Valid,2,Missed begining of skate and all of 20. Skate invalid.  Verified AB 05/26/23 06/28/23 - Added 13 invalid hooks to count (hooks that were missed),45,15,11,2,0,16,0.355555556
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,22,Valid,1,Verified AB 05/26/23,45,0,12,0,0,28,0.622222222
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,23,Valid,1,Verified AB 05/26/23,45,0,17,4,0,21,0.466666667
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,24,Valid,1,Verified AB 05/26/23,44,1,15,2,0,21,0.477272727
 2023,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325401,25,Valid,1,Verified AB 05/26/23,44,0,12,0,0,26,0.590909091
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,1,Valid,1,EV LSC 5/2/24,45,0,28,1,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,2,Valid,1,EV LSC 5/2/24,45,0,27,2,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,3,Valid,1,EV LSC 5/2/24,45,0,24,1,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,4,Valid,1,EV LSC 5/2/24,45,0,22,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,5,Valid,1,EV LSC 5/2/24,44,1,31,4,0,7,0.159090909
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,6,Valid,1,EV LSC 5/2/24,45,0,19,1,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,7,Valid,1,EV LSC 5/2/24,44,0,26,4,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,8,Valid,1,EV LSC 5/2/24,45,1,32,6,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,9,Valid,1,EV LSC 5/2/24,45,0,27,1,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,10,Valid,1,EV LSC 5/2/24,45,0,38,1,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,11,Valid,1,EV LSC 5/2/24,46,0,28,6,0,10,0.217391304
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,12,Valid,1,EV LSC 5/2/24,44,0,28,4,0,8,0.181818182
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,13,Valid,1,EV LSC 5/2/24,45,0,27,3,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,14,Valid,1,EV LSC 5/2/24,45,1,34,1,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,15,Valid,1,EV LSC 5/2/24,45,1,31,3,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,16,Valid,1,EV LSC 5/2/24,47,0,29,4,0,10,0.212765957
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,17,Valid,1,EV LSC 5/2/24,45,0,32,3,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,18,Valid,1,EV LSC 5/2/24,45,0,26,2,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,19,Valid,1,EV LSC 5/2/24,45,0,28,1,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,20,Valid,1,EV LSC 5/2/24,45,0,21,4,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,21,Valid,1,EV LSC 5/2/24,45,0,36,2,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,22,Valid,1,EV LSC 5/2/24,45,0,31,5,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,23,Valid,1,EV LSC 5/2/24,46,0,36,4,0,2,0.043478261
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,24,Valid,1,EV LSC 5/2/24,45,0,28,3,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,20,10,Dall Head,315502,25,Valid,1,EV LSC 5/2/24,44,0,28,7,0,8,0.181818182
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,1,Valid,1,EV ARM 5/3/24,45,0,39,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,2,Valid,1,EV ARM 5/3/24,43,0,41,0,0,2,0.046511628
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,3,Valid,1,EV ARM 5/3/24,45,0,37,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,4,Valid,1,EV ARM 5/3/24,46,0,43,0,0,3,0.065217391
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,5,Valid,1,EV ARM 5/3/24,45,0,34,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,6,Valid,1,EV ARM 5/3/24,45,1,27,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,7,Valid,1,EV ARM 5/3/24,45,0,38,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,8,Valid,1,EV ARM 5/3/24,45,0,40,0,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,9,Valid,1,EV ARM 5/3/24,45,0,33,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,10,Valid,1,EV ARM 5/3/24,45,0,36,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,11,Valid,1,EV ARM 5/3/24,45,0,37,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,12,Valid,1,EV ARM 5/3/24,46,0,35,0,0,6,0.130434783
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,13,Valid,1,EV ARM 5/3/24,45,0,30,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,14,Valid,1,EV ARM 5/3/24,45,0,34,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,15,Valid,1,EV ARM 5/3/24,46,0,37,0,0,5,0.108695652
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,16,Valid,1,EV ARM 5/3/24,45,0,36,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,17,Valid,1,EV ARM 5/3/24,45,0,39,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,18,Valid,1,EV ARM 5/3/24,44,0,35,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,19,Valid,1,EV ARM 5/3/24,45,0,39,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,20,Valid,1,EV ARM 5/3/24,46,0,26,0,0,12,0.260869565
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,21,Valid,1,EV ARM 5/3/24,45,0,33,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,22,Valid,1,EV ARM 5/3/24,45,0,32,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,23,Valid,1,EV ARM 5/3/24,45,0,42,0,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,24,Valid,1,EV ARM 5/3/24,44,0,37,0,0,5,0.113636364
+2024,Clarence Sablefish LL Survey,1,31,13,Skin Island,315502,25,Valid,1,EV ARM 5/3/24 one thornyhead eaten by hagfish,46,0,36,0,0,3,0.065217391
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,1,Valid,1,EV ARM 5/4/24,45,1,29,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,2,Valid,1,EV ARM 5/4/24,45,0,20,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,3,Valid,1,EV ARM 5/4/24,46,1,28,0,0,15,0.326086957
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,4,Valid,1,EV ARM 5/4/24,45,5,21,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,5,Valid,1,EV ARM 5/4/24,45,3,25,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,6,Valid,1,EV ARM 5/4/24,45,5,21,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,7,Valid,1,EV ARM 5/4/24,44,2,19,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,8,Valid,1,EV ARM 5/4/24 thornyhead lost over the rail,45,17,12,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,9,Valid,1,EV ARM 5/4/24,46,10,14,0,0,20,0.434782609
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,10,Valid,1,EV ARM 5/4/24,44,29,7,0,0,7,0.159090909
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,11,Valid,1,EV ARM 5/4/24,47,9,18,0,0,17,0.361702128
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,12,Valid,1,EV ARM 5/4/24,45,6,22,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,13,Valid,1,EV ARM 5/4/24,48,31,5,0,0,8,0.166666667
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,14,Valid,1,thornyhead lost over the rail EV ARM 5/4/24,44,5,18,0,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,15,Valid,1,EV ARM 5/4/24,45,21,14,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,16,Valid,1,EV ARM 5/4/24,45,0,30,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,17,Valid,1,EV ARM 5/4/24,45,0,33,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,18,Valid,1,EV ARM 5/4/24,44,0,40,0,0,3,0.068181818
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,19,Valid,1,EV ARM 5/4/24,45,0,29,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,20,Valid,1,EV ARM 5/4/24,45,1,32,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,21,Valid,1,EV ARM 5/4/24,45,0,29,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,22,Valid,1,EV ARM 5/4/24,46,1,33,0,0,11,0.239130435
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,23,Valid,1,EV ARM 5/4/24,45,0,26,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,24,Valid,1,EV ARM 5/4/24,45,1,33,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,37,15,Caamano Point,315502,25,Valid,1,EV ARM 5/4/24,45,0,32,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,1,Not Valid,2,EV LSC 5/4/24,45,0,21,14,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,2,Valid,1,EV LSC 5/4/24,45,6,14,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,3,Valid,1,EV LSC 5/4/24,44,1,29,0,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,4,Valid,1,EV LSC 5/4/24,45,2,23,2,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,5,Valid,1,EV LSC 5/4/24,45,5,17,2,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,6,Valid,1,EV LSC 5/4/24,45,5,15,4,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,7,Valid,1,EV LSC 5/4/24,45,2,22,3,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,8,Valid,1,EV LSC 5/4/24,44,3,13,1,0,26,0.590909091
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,9,Valid,1,EV LSC 5/4/24,43,1,21,0,0,21,0.488372093
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,10,Valid,1,EV LSC 5/4/24,45,2,14,3,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,11,Valid,1,EV LSC 5/4/24,45,1,16,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,12,Valid,1,EV LSC 5/4/24,45,2,26,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,13,Valid,1,EV LSC 5/4/24 TH discarded,45,2,25,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,14,Valid,1,EV LSC 5/4/24,45,1,22,1,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,15,Valid,1,EV LSC 5/4/24,45,0,25,1,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,16,Valid,1,EV LSC 5/4/24,45,0,23,1,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,17,Valid,1,EV LSC 5/4/24,45,3,22,1,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,18,Valid,1,EV LSC 5/4/24,45,1,28,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,19,Valid,1,EV LSC 5/4/24,44,0,27,0,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,20,Valid,1,EV LSC 5/4/24,45,1,24,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,21,Valid,1,EV LSC 5/4/24 TH was a rebite with longnose skate - skate was released healthy but thr TH was in poor shape.,44,1,25,1,0,15,0.340909091
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,22,Valid,1,EV LSC 5/4/24,45,2,25,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,23,Valid,1,EV LSC 5/4/24,45,0,31,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,24,Valid,1,EV LSC 5/4/24,45,5,22,7,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,44,14,Ship Island,325531,25,Valid,1,EV LSC 5/4/24,45,5,25,4,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,1,Valid,1,EV ARM 4/29/24,45,0,42,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,2,Valid,1,EV ARM 4/29/24 ,46,0,36,0,0,10,0.217391304
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,3,Valid,1,EV ARM 4/29/24 ,45,0,33,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,4,Valid,1,EV ARM 4/29/24 ,45,1,32,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,5,Valid,1,EV ARM 4/29/24 ,45,0,27,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,6,Valid,1,EV ARM 4/29/24 ,48,0,35,0,0,13,0.270833333
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,7,Valid,1,EV ARM 4/29/24,44,0,31,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,8,Valid,1,EV ARM 4/29/24 ,45,0,32,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,9,Valid,1,EV ARM 4/29/24 ,45,1,30,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,10,Valid,1,"rebite sablefish and longnose skate, black hagfish had the bait EV ARM 4/29/24 ",46,0,34,0,0,7,0.152173913
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,11,Valid,1,EV ARM 4/29/24,45,0,32,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,12,Valid,1,EV ARM 4/29/24,45,0,31,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,13,Valid,1,EV ARM 4/29/24,45,0,28,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,14,Valid,1,EV ARM 4/29/24 ,45,1,29,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,15,Valid,1,EV ARM 4/29/24 ,44,0,29,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,16,Valid,1,small snarl with 2 hooks EV ARM 4/29/24,41,0,23,2,0,16,0.390243902
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,17,Valid,1,EV ARM 4/29/24 ,45,0,34,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,18,Valid,1,EV ARM 4/29/24 ,45,0,34,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,19,Valid,1,EV ARM 4/29/24 ,45,1,27,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,20,Valid,1,EV ARM 4/29/24 ,45,0,26,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,21,Valid,1,EV ARM 4/29/24 ,44,0,35,0,0,7,0.159090909
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,22,Valid,1,EV ARM 4/29/24 ,45,0,38,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,23,Valid,1,Snarl EV ARM 4/29/24 ,48,1,28,3,0,9,0.1875
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,24,Valid,1,Medium snarl EV ARM 4/29/24,47,0,31,6,0,8,0.170212766
+2024,Clarence Sablefish LL Survey,1,101,1,Little Ratz Harbor,325533,25,Valid,1,Snarl EV ARM 4/29/24 ,47,0,27,4,0,11,0.234042553
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,1,Valid,1,EV ARM 4/29/24,44,0,32,0,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,2,Valid,1,EV ARM 4/29/24,45,0,30,1,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,3,Valid,1,EV ARM 4/29/24,45,0,31,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,4,Valid,1,,46,0,37,0,0,7,0.152173913
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,5,Valid,1,EV ARM 4/29/24,43,0,33,0,0,8,0.186046512
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,6,Valid,1,EV ARM 4/29/24,45,0,25,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,7,Valid,1,EV ARM 4/29/24,44,0,27,0,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,8,Valid,1,EV ARM 4/29/24,45,0,28,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,9,Valid,1,EV ARM 4/29/24,45,0,26,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,10,Valid,1,EV ARM 4/29/24,45,0,31,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,11,Valid,1,EV ARM 4/29/24,45,1,35,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,12,Valid,1,EV ARM 4/29/24,47,0,37,0,0,7,0.14893617
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,13,Valid,1,EV ARM 4/29/24,44,0,32,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,14,Valid,1,EV ARM 4/29/24,45,0,30,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,15,Valid,1,EV ARM 4/29/24,45,0,35,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,16,Valid,1,EV ARM 4/29/24,45,0,31,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,17,Valid,1,EV ARM 4/29/24,45,0,34,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,18,Valid,1,EV ARM 4/29/24,45,0,36,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,19,Valid,1,EV ARM 4/29/24,44,0,38,0,0,5,0.113636364
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,20,Valid,1,EV ARM 4/29/24,45,0,31,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,21,Valid,1,small snarl EV ARM 4/29/24,45,0,32,2,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,22,Valid,1,EV ARM 4/29/24,47,0,35,0,0,7,0.14893617
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,23,Valid,1,EV ARM 4/29/24,45,0,33,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,24,Valid,1,EV ARM 4/29/24,45,0,31,1,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,102,3,Narrow Point,325533,25,Valid,1,"Two separate snarls, one with three hooks and one with four EV ARM 4/29/24",45,0,22,7,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,1,Valid,1,EV LSC 4/29/23,44,0,28,4,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,2,Valid,1,EV LSC 4/29/23,45,0,20,6,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,3,Valid,1,EV LSC 4/29/23,45,1,28,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,4,Valid,1,EV LSC 4/29/23,43,0,22,0,0,20,0.465116279
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,5,Valid,1,EV LSC 4/29/23,46,0,19,4,0,21,0.456521739
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,6,Valid,1,EV LSC 04/29/24,45,1,28,3,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,7,Valid,1,EV LSC 04/29/24,45,0,16,3,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,8,Valid,1,EV LSC 04/29/24,44,0,24,1,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,9,Valid,1,EV LSC 04/29/24,45,0,24,3,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,10,Valid,1,EV LSC 04/29/24,45,0,15,2,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,11,Valid,1,EV LSC 04/29/24,44,0,23,2,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,12,Valid,1,EV LSC 4/29/24,45,4,20,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,13,Valid,1,EV LSC 4/29/24,46,1,24,1,0,19,0.413043478
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,14,Valid,1,EV LSC 4/29/24,45,1,30,2,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,15,Valid,1,EV LSC 4/29/24,45,0,24,3,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,16,Valid,1,EV LSC 4/29/24,45,0,28,3,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,17,Valid,1,EV LSC 4/29/24,44,0,25,2,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,18,Valid,1,EV LSC 4/29/24,45,0,31,2,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,19,Valid,1,EV LSC 4/29/24,45,0,38,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,20,Valid,1,EV LSC 4/29/24,45,0,28,6,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,21,Valid,1,EV LSC 4/29/24,45,1,31,3,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,22,Valid,1,EV LSC 4/29/24,45,1,18,10,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,23,Valid,1,EV LSC 4/29/24,44,0,26,1,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,24,Valid,1,EV LSC 4/29/24,47,1,24,1,0,14,0.29787234
+2024,Clarence Sablefish LL Survey,1,103,2,Tolstoi Point,325531,25,Valid,1,EV LSC 4/29/24,45,1,22,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,1,Valid,1,EV LSC 5/3/24,45,0,26,2,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,2,Valid,1,EV LSC 5/3/24,45,0,28,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,3,Valid,1,EV LSC 5/3/24,44,0,28,0,0,15,0.340909091
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,4,Valid,1,EV LSC 5/3/24,44,3,17,2,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,5,Valid,1,EV LSC 5/3/24,45,1,20,1,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,6,Valid,1,EV LSC 5/3/24,45,0,34,2,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,7,Valid,1,EV LSC 5/3/24,44,2,22,1,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,8,Valid,1,EV LSC 5/3/24,44,4,19,1,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,9,Valid,1,EV LSC 5/3/24,45,3,17,3,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,10,Valid,1,EV LSC 5/3/24,44,0,17,1,0,24,0.545454545
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,11,Valid,1,EV LSC 5/3/24,45,0,21,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,12,Valid,1,EV LSC 5/3/24,45,0,29,3,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,13,Valid,1,EV LSC 5/3/24,46,0,26,2,0,14,0.304347826
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,14,Valid,1,TH discarded due to fleas EV LSC 5/3/24,46,0,27,1,0,16,0.347826087
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,15,Valid,1,EV LSC 5/3/24,44,0,28,1,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,16,Valid,1,EV LSC 5/3/24,45,0,30,1,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,17,Valid,1,EV LSC 5/3/24,45,0,31,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,18,Valid,1,EV LSC 5/3/24,46,0,27,0,0,15,0.326086957
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,19,Valid,1,EV LSC 5/3/24,45,2,24,2,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,20,Valid,1,EV LSC 5/3/24,45,0,30,1,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,21,Valid,1,EV LSC 5/3/24,45,0,33,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,22,Valid,1,EV LSC 5/3/24,44,1,31,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,23,Valid,1,EV LSC 5/3/24,45,1,24,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,24,Valid,1,EV LSC 5/3/24,44,0,29,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,1,107,12,Wedge Island,315502,25,Valid,1,EV LSC 5/3/24,45,0,31,2,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,1,Valid,1,EV ARM 5/3/24,45,0,28,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,2,Valid,1,EV ARM 5/3/24,47,0,35,0,0,11,0.234042553
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,3,Valid,1,EV ARM 5/3/24,45,0,35,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,4,Valid,1,EV ARM 5/3/24,45,1,30,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,5,Valid,1,EV ARM 5/3/24,46,0,37,0,0,7,0.152173913
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,6,Valid,1,EV ARM 5/3/24,45,0,37,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,7,Valid,1,EV ARM 5/3/24,44,0,32,0,0,9,0.204545455
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,8,Valid,1,EV ARM 5/3/24,45,0,31,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,9,Valid,1,EV ARM 5/3/24,47,2,34,0,0,10,0.212765957
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,10,Valid,1,EV ARM 5/3/24,45,0,30,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,11,Valid,1,EV ARM 5/3/24,45,1,31,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,12,Valid,1,EV ARM 5/3/24,46,3,31,0,0,12,0.260869565
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,13,Valid,1,EV ARM 5/3/24,46,0,30,1,0,12,0.260869565
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,14,Valid,1,EV ARM 5/3/24,45,1,35,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,15,Valid,1,EV ARM 5/3/24,47,0,26,0,0,16,0.340425532
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,16,Valid,1,EV ARM 5/3/24,45,0,33,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,17,Valid,1,EV ARM 5/3/24,45,0,32,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,18,Valid,1,EV ARM 5/3/24,45,0,35,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,19,Valid,1,EV ARM 5/3/24,44,0,31,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,20,Valid,1,EV ARM 5/3/24,47,1,33,1,0,8,0.170212766
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,21,Valid,1,EV ARM 5/3/24,45,3,34,2,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,22,Valid,1,EV ARM 5/3/24,45,1,35,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,23,Valid,1,EV ARM 5/3/24,45,3,27,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,24,Valid,1,EV ARM 5/3/24,44,4,21,1,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,1,109,11,Canoe Cove,315502,25,Valid,1,EV ARM 5/3/24,45,0,32,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,1,Not Valid; orca,4,EV ARM 5/1/24,46,2,15,0,0,24,0.52173913
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,2,Not Valid; orca,4,EV ARM 5/1/24,44,1,19,0,0,24,0.545454545
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,3,Not Valid; orca,4,EV ARM 5/1/24,45,2,25,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,4,Not Valid; orca,4,EV ARM 5/1/24,45,5,25,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,5,Not Valid; orca,4,EV ARM 5/1/24,43,4,22,0,0,15,0.348837209
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,6,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,1,19,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,7,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,5,19,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,8,Not Valid; orca,4,EV ARM 5/1/24,46,7,21,1,0,14,0.304347826
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,9,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,12,21,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,10,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,7,20,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,11,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,1,31,3,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,12,Not Valid; orca,4,small snarl with two hooks EV ARM 5/1/24,45,9,19,2,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,13,Not Valid; orca,4,EV ARM 5/1/24,45,2,20,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,14,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,47,10,20,0,0,15,0.319148936
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,15,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,10,17,1,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,16,Not Valid; orca,4,EV ARM 5/1/24,44,3,18,0,0,22,0.5
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,17,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,3,21,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,18,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,4,32,1,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,19,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,46,7,19,0,0,16,0.347826087
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,20,Not Valid; orca,4,EV ARM 5/1/24,46,9,23,1,0,10,0.217391304
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,21,Not Valid; orca,4,EV ARM 5/1/24,45,2,28,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,22,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,0,25,1,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,23,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,4,17,0,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,24,Not Valid; orca,4,EV ARM 5/1/24 no obvious signs of depredation but orcas were present,45,5,15,1,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,118,7,West Devil Rock,315431,25,Not Valid; orca,4,Snarl with three hooks and two sablefish  no obvious signs of depredation but orcas were present EV ARM 5/1/24,45,4,15,3,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,1,Valid,1,EV LSC 4/30/24,45,1,15,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,2,Valid,1,EV LSC 4/30/24,45,5,12,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,3,Valid,1,EV LSC 4/30/24,44,5,12,2,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,4,Valid,1,EV LSC 4/30/24,44,5,14,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,5,Valid,1,EV LSC 4/30/24,45,4,13,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,6,Valid,1,EV LSC 4/30/24,44,5,12,2,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,7,Valid,1,Rebite with thornyhead and HAL (HAL not added to tally)EV LSC 4/30/24,45,10,11,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,8,Valid,1,EVLSC 5/4/24,45,8,11,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,9,Valid,1,EV LSC 4/30/24,45,20,1,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,10,Valid,1,EV LSC 5/4/24,44,10,8,1,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,11,Valid,1,EV LSC 4/30/24,45,6,16,1,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,12,Valid,1,EV LSC 4/30/24,44,4,14,1,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,13,Valid,1,EV LSC 4/30/24,44,2,10,0,0,23,0.522727273
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,14,Valid,1,EV LSC 4/30/24,43,14,5,0,0,21,0.488372093
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,15,Valid,1,EV LSC 4/30/24,45,9,6,0,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,16,Valid,1,EV LSC 4/30/24,44,16,4,0,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,17,Valid,1,EV LSC 4/30/24,44,12,6,1,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,18,Valid,1,EV LSC 4/30/24,45,12,19,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,19,Valid,1,EV LSC 4/30/24,44,8,4,1,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,20,Valid,1,EV LSC 4/30/24,45,6,9,1,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,21,Valid,1,EV LSC 4/29/24,45,11,9,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,22,Valid,1,EV LSC 4/29/24,44,15,8,0,0,14,0.318181818
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,23,Valid,1,one TH lost at rail EV LSC 4/30/24,46,14,7,0,0,14,0.304347826
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,24,Valid,1,one TH was lost at the rail EV LSC 4/30/24,45,7,10,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,119,4,Cape Chacon,315431,25,Valid,1,EV LSC 4/30/24,46,10,13,0,0,16,0.347826087
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,1,Not Valid; orca,4,EV ARM 4/30/24,45,2,39,2,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,2,Not Valid; orca,4,EV ARM 4/30/24,45,2,35,0,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,3,Not Valid; orca,4,EV ARM 4/30/24,45,4,34,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,4,Not Valid; orca,4,EV ARM 4/30/24,46,2,37,0,0,2,0.043478261
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,5,Not Valid; orca,4,EV ARM 4/30/24,45,5,35,0,0,1,0.022222222
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,6,Not Valid; orca,4,EV ARM 4/30/24,44,2,37,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,7,Not Valid; orca,4,EV ARM 4/30/24,45,7,34,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,8,Not Valid; orca,4,EV ARM 4/30/24,45,15,27,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,9,Not Valid; orca,4,EV ARM 4/30/24,44,12,25,0,0,1,0.022727273
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,10,Not Valid; orca,4,EV ARM 4/30/24,44,5,33,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,11,Not Valid; orca,4,EV ARM 4/30/24,43,21,18,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,12,Not Valid; orca,4,EV ARM 4/30/24,45,11,28,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,13,Not Valid; orca,4,small snarl with two hooks EV ARM 4/30/24,44,3,31,2,0,3,0.068181818
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,14,Not Valid; orca,4,EV ARM 4/30/24,46,9,31,0,0,1,0.02173913
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,15,Not Valid; orca,4,Rebite thornyhead with sablefish EV ARM 4/30/24,46,5,30,3,0,1,0.02173913
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,16,Not Valid; orca,4,EV ARM 4/30/24,46,12,23,1,0,5,0.108695652
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,17,Not Valid; orca,4,Rebite with longnose skate EV ARM 4/30/24,45,8,25,2,0,0,0
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,18,Not Valid; orca,4,EV ARM 4/30/24,47,8,31,1,0,1,0.021276596
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,19,Not Valid; orca,4,EV ARM 4/30/24,45,0,37,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,20,Not Valid; orca,4,EV ARM 4/30/24,44,6,31,1,0,3,0.068181818
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,21,Not Valid; orca,4,EV ARM 4/30/24,45,3,33,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,22,Not Valid; orca,4,Rebite thornyhead with a longnose skate EV ARM 4/30/24,45,4,26,1,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,23,Not Valid; orca,4,Small snarl with two hooks EV ARM 4/30/24,44,2,34,2,0,4,0.090909091
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,24,Not Valid; orca,4,EV ARM 4/30/24,46,1,35,0,0,3,0.065217391
+2024,Clarence Sablefish LL Survey,1,120,5,Celestial Reef,315431,25,Not Valid; orca,4,EV ARM 4/30/24,46,4,31,2,0,3,0.065217391
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,1,Valid,1,EV ARM 5/1/24,46,0,38,0,0,8,0.173913043
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,2,Valid,1,EV ARM 5/1/24,45,0,38,1,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,3,Valid,1,EV ARM 5/1/24,44,0,37,0,0,5,0.113636364
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,4,Valid,1,EV ARM 5/1/24,45,1,31,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,5,Valid,1,EV ARM 5/1/24,47,0,41,0,0,4,0.085106383
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,6,Valid,1,EV ARM 5/1/24,43,0,38,0,0,4,0.093023256
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,7,Valid,1,EV ARM 5/1/24,46,1,37,1,0,6,0.130434783
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,8,Valid,1,EV ARM 5/1/24,48,0,40,0,0,5,0.104166667
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,9,Valid,1,EV ARM 5/1/24,45,0,37,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,10,Valid,1,EV ARM 5/1/24,45,0,36,2,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,11,Valid,1,EV ARM 5/1/24,45,0,40,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,12,Valid,1,EV ARM 5/1/24,45,2,38,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,13,Valid,1,EV ARM 5/1/24,45,0,38,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,14,Valid,1,EV ARM 5/1/24,45,0,32,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,15,Valid,1,EV ARM 5/1/24,45,0,36,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,16,Valid,1,EV ARM 5/1/24,45,0,42,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,17,Valid,1,EV ARM 5/1/24,45,0,40,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,18,Valid,1,EV ARM 5/1/24 thornyhead lost,45,0,39,0,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,19,Valid,1,EV ARM 5/1/24,45,0,37,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,20,Valid,1,EV ARM 5/1/24,46,0,38,0,0,2,0.043478261
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,21,Valid,1,EV ARM 5/1/24,45,0,38,0,0,3,0.066666667
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,22,Valid,1,EV ARM 5/1/24,44,0,39,0,0,1,0.022727273
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,23,Valid,1,EV ARM 5/1/24,46,0,37,0,0,6,0.130434783
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,24,Valid,1,EV ARM 5/1/24,45,1,42,0,0,0,0
+2024,Clarence Sablefish LL Survey,1,121,9,Celestial Reef,315431,25,Valid,1,EV ARM 5/1/24,46,0,34,0,0,4,0.086956522
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,1,Valid,1,EV LSC 5/1/24,45,3,11,3,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,2,Valid,1,EV LSC 5/1/24,45,1,24,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,3,Valid,1,EV LSC 5/1/24,45,6,7,0,0,27,0.6
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,4,Valid,1,EV LSC 5/1/24,44,0,18,2,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,5,Valid,1,EV LSC 5/1/24,43,2,19,0,0,17,0.395348837
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,6,Valid,1,TH lost at rail EV LSC 5/1/24,45,0,19,2,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,7,Valid,1,EV LSC 5/1/24,45,3,22,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,8,Valid,1,EV LSC 5/1/24,45,1,18,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,9,Valid,1,EV LSC 5/1/24,45,2,20,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,10,Valid,1,EV LSC 5/1/24,46,4,19,2,0,14,0.304347826
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,11,Valid,1,EV LSC 5/1/24,45,5,15,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,12,Valid,1,EV LSC 5/1/24,45,3,14,0,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,13,Valid,1,EV LSC 5/1/24,45,1,11,2,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,14,Valid,1,EV LSC 5/1/24,45,1,17,0,0,24,0.533333333
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,15,Valid,1,EV LSC 5/1/24,45,2,13,0,0,26,0.577777778
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,16,Valid,1,EV LSC 5/1/24,46,2,12,2,0,25,0.543478261
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,17,Valid,1,EV LSC 5/1/24,47,1,15,0,0,25,0.531914894
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,18,Valid,1,EV LSC 5/1/24,46,0,20,0,0,24,0.52173913
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,19,Valid,1,EV LSC 5/1/24,44,2,18,0,0,22,0.5
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,20,Valid,1,EV LSC 5/1/24 TH lost atvrail,46,0,18,2,0,20,0.434782609
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,21,Valid,1,Merged skate with skate 22 - divided hooks between skates 21 and 22 - see data form for details EV LSC 5/1/24,45,2,14,1,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,22,Valid,1,Merged skate with skate 21- divided hooks between skates 21 and 22 - see data form for details EV LSC 5/1/24,43,2,0,0,14,26,0.604651163
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,23,Valid,1,EV LSC 5/1/24,45,5,25,1,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,24,Valid,1,TH lost at rail EV LSC 5/1/24,45,1,18,0,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,1,122,8,West Devil Rock,315431,25,Valid,1,EV LSC 5/1/24,45,0,25,9,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,1,Valid,1,EV LSC 4/30/24,44,15,14,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,2,Valid,1,EV LSC 4/30/24,45,18,11,1,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,3,Valid,1,EV LSC 4/30/24,45,18,4,2,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,4,Valid,1,EV LSC 4/30/24,44,25,6,0,0,7,0.159090909
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,5,Valid,1,EV LSC 4/30/24,45,29,1,1,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,6,Valid,1,EV LSC 4/30/24,44,30,1,0,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,7,Valid,1,EV LSC 4/30/24,45,20,9,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,8,Valid,1,EV LSC 4/30/24,44,22,2,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,9,Valid,1,RB rockfish lost at the rail EV LSC 4/30/24,43,25,0,1,0,11,0.255813953
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,10,Valid,1,EV LSC 4/30/24,45,25,4,1,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,11,Valid,1,EV LSC 4/30/24,43,22,3,0,0,9,0.209302326
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,12,Valid,1,EV LSC 4/30/24,44,22,5,2,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,13,Valid,1,TH lost at the rsil EV LSC 4/30/24,44,17,3,1,0,11,0.25
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,14,Valid,1,EV LSC 4/30/24,44,27,3,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,15,Valid,1,EV LSC 4/30/24,45,22,5,1,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,16,Valid,1,2 TH lost at the rail EV LSC 4/30/24,45,23,5,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,17,Valid,1,EV LSC 4/30/24,44,28,0,1,0,9,0.204545455
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,18,Valid,1,EV LSC 4/30/24,45,22,2,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,19,Valid,1,EV LSC 4/30/24,45,24,5,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,20,Valid,1,EV LSC 4/30/24,47,33,3,0,0,9,0.191489362
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,21,Valid,1,EV LSC 4/30/24,45,24,7,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,22,Valid,1,EV LSC 4/30/24,44,23,6,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,23,Valid,1,EV LSC 4/30/24,45,22,8,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,24,Valid,1,EV LSC 4/30/24,45,25,9,0,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,1,123,6,Celestial Reef,325401,25,Valid,1,EV LSC 4/30/24,44,14,4,1,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,1,Valid,1,FINALIZED ARV 5/3,45,2,29,3,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,2,Valid,1,FINALIZED ARV 5/3,45,0,28,3,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,3,Valid,1,FINALIZED ARV 5/3,45,0,32,1,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,4,Valid,1,FINALIZED ARV 5/3,45,2,30,1,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,5,Valid,1,FINALIZED ARV 5/3,45,1,22,1,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,6,Valid,1,FINALIZED ARV 5/3,45,0,22,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,7,Valid,1,FINALIZED ARV 5/3,45,0,24,2,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,8,Valid,1,FINALIZED ARV 5/3,44,0,18,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,9,Valid,1,FINALIZED ARV 5/3,45,0,20,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,10,Valid,1,FINALIZED ARV 5/3,45,1,24,3,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,11,Valid,1,FINALIZED ARV 5/3,45,0,16,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,12,Valid,1,FINALIZED ARV 5/3,45,0,11,2,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,13,Valid,1,FINALIZED ARV 5/3,44,0,20,0,0,11,0.25
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,14,Valid,1,,44,2,17,1,0,11,0.25
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,15,Valid,1,FINALIZED ARV 5/3,45,2,21,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,16,Valid,1,FINALIZED ARV 5/3,43,0,21,0,0,10,0.23255814
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,17,Valid,1,FINALIZED ARV 5/3,45,0,14,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,18,Valid,1,FINALIZED ARV 5/3,45,0,9,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,19,Valid,1,FINALIZED ARV 5/3,45,1,15,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,20,Valid,1,,45,1,22,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,21,Valid,1,FINALIZED ARV 5/3,46,4,19,1,0,9,0.195652174
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,22,Valid,1,FINALIZED ARV 5/3,45,2,17,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,23,Valid,1,FINALIZED ARV 5/3,45,0,11,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,24,Valid,1,FINALIZED ARV 5/3,45,1,15,1,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,12,12,Island Point,315432,25,Valid,1,FINALIZED ARV 5/3,45,1,25,5,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,1,Valid,1,"FINALIZED ARV 04/29/24 Re-counted hooks and edited total, AB 5/8/24",46,3,29,0,0,12,0.260869565
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,2,Valid,1,FINALIZED ARV 04/29/24,45,3,36,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,3,Valid,1,FINALIZED ARV 04/29/24,43,0,34,0,0,8,0.186046512
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,4,Valid,1,FINALIZED ARV 04/29/24,44,0,38,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,5,Valid,1,FINALIZED ARV 04/29/24,45,0,42,0,0,1,0.022222222
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,6,Valid,1,FINALIZED ARV 04/29/24,45,0,35,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,7,Valid,1,FINALIZED ARV 04/29/24,45,1,35,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,8,Valid,1,FINALIZED ARV 04/29/24,45,0,41,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,9,Valid,1,FINALIZED ARV 04/29/24,44,0,38,0,0,3,0.068181818
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,10,Valid,1,FINALIZED ARV 04/29/24,45,3,31,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,11,Valid,1,FINALIZED ARV 04/29/24,45,0,32,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,12,Valid,1,FINALIZED ARV 04/29/24,45,3,33,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,13,Valid,1,FINALIZED ARV 04/29/24,43,7,27,0,0,7,0.162790698
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,14,Valid,1,FINALIZED ARV 04/29/24,44,8,30,0,0,5,0.113636364
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,15,Valid,1,FINALIZED ARV 04/29/24,43,1,32,0,0,8,0.186046512
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,16,Valid,1,FINALIZED ARV 04/29/24,45,5,31,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,17,Valid,1,FINALIZED ARV 04/29/24,45,2,37,0,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,18,Valid,1,FINALIZED ARV 04/29/24,44,2,29,0,0,9,0.204545455
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,19,Valid,1,FINALIZED ARV 04/29/24,45,5,29,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,20,Valid,1,FINALIZED ARV 04/29/24,45,1,27,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,21,Valid,1,FINALIZED ARV 04/29/24,44,0,34,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,22,Valid,1,FINALIZED ARV 04/29/24,45,0,34,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,23,Valid,1,FINALIZED ARV 04/29/24,45,1,36,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,24,Valid,1,FINALIZED ARV 04/29/24,45,1,34,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,18,3,Hidden Bay,315432,25,Valid,1,FINALIZED ARV 04/29/24,45,0,33,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,1,Valid,1,FINALIZED ARV 04/29/24,44,0,20,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,2,Valid,1,FINALIZED ARV 04/29/24,45,0,29,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,3,Valid,1,FINALIZED ARV 04/29/24,44,0,32,0,0,3,0.068181818
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,4,Valid,1,FINALIZED ARV 04/29/24,45,0,24,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,5,Valid,1,FINALIZED ARV 04/29/24,46,16,16,0,0,8,0.173913043
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,6,Valid,1,FINALIZED ARV 04/29/24,45,22,14,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,7,Valid,1,FINALIZED ARV 04/29/24,45,18,19,1,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,8,Valid,1,FINALIZED ARV 04/29/24,45,19,14,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,9,Valid,1,FINALIZED ARV 04/29/24,45,29,10,2,0,2,0.044444444
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,10,Valid,1,FINALIZED ARV 04/29/24,45,22,6,8,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,11,Valid,1,FINALIZED ARV 04/29/24,45,43,1,0,0,0,0
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,12,Valid,1,FINALIZED ARV 04/29/24,45,7,23,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,13,Valid,1,FINALIZED ARV 04/29/24,45,10,13,6,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,14,Valid,1,FINALIZED ARV 04/29/24,45,0,25,11,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,15,Valid,1,FINALIZED ARV 04/29/24,45,3,25,2,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,16,Valid,1,,44,0,29,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,17,Valid,1,FINALIZED ARV 04/29/24,45,0,28,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,18,Valid,1,FINALIZED ARV 04/29/24,44,0,27,0,0,10,0.227272727
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,19,Valid,1,FINALIZED ARV 04/29/24,44,0,30,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,20,Valid,1,FINALIZED ARV 04/29/24,45,0,31,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,21,Valid,1,FINALIZED ARV 04/29/24,45,0,28,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,22,Valid,1,FINALIZED ARV 04/29/24,45,0,19,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,23,Valid,1,FINALIZED ARV 04/29/24,45,0,24,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,24,Valid,1,,46,0,15,0,0,7,0.152173913
+2024,Clarence Sablefish LL Survey,2,110,2,Percy Island,315432,25,Valid,1,FINALIZED ARV 04/29/24,43,0,20,0,0,7,0.162790698
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,1,Valid,1,FINALIZED ARV 04/29/24,40,0,28,0,0,10,0.25
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,2,Valid,1,FINALIZED ARV 04/29/24,43,0,35,0,0,6,0.139534884
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,3,Valid,1,FINALIZED ARV 04/29/24,44,0,28,1,0,14,0.318181818
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,4,Valid,1,FINALIZED ARV 04/29/24,45,0,31,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,5,Valid,1,FINALIZED ARV 04/29/24,44,0,37,0,0,6,0.136363636
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,6,Valid,1,FINALIZED ARV 04/29/24,44,0,35,0,0,5,0.113636364
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,7,Valid,1,FINALIZED ARV 04/29/24,44,0,37,0,0,4,0.090909091
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,8,Valid,1,FINALIZED ARV 04/29/24,43,0,30,0,0,7,0.162790698
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,9,Valid,1,FINALIZED ARV 04/29/24,45,0,33,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,10,Valid,1,FINALIZED ARV 04/29/24,42,0,30,0,0,9,0.214285714
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,11,Valid,1,FINALIZED ARV 04/29/24,42,0,31,0,0,8,0.19047619
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,12,Valid,1,FINALIZED ARV 04/29/24,45,0,30,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,13,Valid,1,FINALIZED ARV 04/29/24,45,2,35,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,14,Valid,1,FINALIZED ARV 04/29/24,44,0,34,0,0,9,0.204545455
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,15,Valid,1,FINALIZED ARV 04/29/24,42,0,32,0,0,9,0.214285714
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,16,Valid,1,FINALIZED ARV 04/29/24,43,0,34,0,0,7,0.162790698
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,17,Valid,1,FINALIZED ARV 04/29/24,42,0,32,0,0,7,0.166666667
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,18,Valid,1,FINALIZED ARV 04/29/24,43,0,34,0,0,9,0.209302326
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,19,Valid,1,"FINALIZED ARV 04/29/24 Re-counted hooks and edited total, AB 5/8/24",47,1,38,0,0,7,0.14893617
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,20,Valid,1,FINALIZED ARV 04/29/24,43,0,34,0,0,8,0.186046512
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,21,Valid,1,FINALIZED ARV 04/29/24,40,0,32,0,0,8,0.2
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,22,Valid,1,FINALIZED ARV 04/29/24,41,0,33,0,0,7,0.170731707
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,23,Valid,1,FINALIZED ARV 04/29/24,45,0,31,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,24,Valid,1,FINALIZED ARV 04/29/24,43,0,34,0,0,8,0.186046512
+2024,Clarence Sablefish LL Survey,2,111,1,Ingraham Bay,315432,25,Valid,1,"FINALIZED ARV 04/29/24 Re-counted hooks and edited total, AB 5/8/24",43,0,35,0,0,5,0.11627907
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,1,Valid,1,Finalized  AB 05/04/24,45,1,22,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,2,Valid,1,Finalized  AB 05/04/24,45,0,25,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,3,Valid,1,Finalized  AB 05/04/24,45,2,23,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,4,Valid,1,Finalized  AB 05/04/24,46,2,22,2,0,13,0.282608696
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,5,Valid,1,Finalized  AB 05/04/24,45,0,19,3,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,6,Valid,1,Finalized  AB 05/04/24,45,0,18,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,7,Valid,1,Finalized  AB 05/04/24,45,2,19,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,8,Valid,1,Finalized  AB 05/04/24,45,2,21,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,9,Valid,1,Finalized  AB 05/04/24,45,0,16,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,10,Valid,1,Finalized  AB 05/04/24,44,3,19,0,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,11,Valid,1,Finalized  AB 05/04/24,44,2,17,0,0,19,0.431818182
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,12,Valid,1,Finalized  AB 05/04/24,45,1,18,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,13,Valid,1,Finalized  AB 05/04/24,44,1,27,1,0,11,0.25
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,14,Valid,1,Finalized  AB 05/04/24,45,0,22,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,15,Valid,1,Finalized  AB 05/04/24,44,4,17,0,0,20,0.454545455
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,16,Valid,1,Finalized  AB 05/04/24,45,0,15,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,17,Valid,1,Finalized  AB 05/04/24,45,3,19,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,18,Valid,1,Finalized  AB 05/04/24,45,2,25,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,19,Valid,1,Finalized  AB 05/04/24,45,0,27,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,20,Valid,1,Finalized  AB 05/04/24,45,0,34,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,21,Valid,1,Finalized  AB 05/04/24,45,1,21,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,22,Valid,1,Finalized  AB 05/04/24,45,1,20,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,23,Valid,1,Finalized  AB 05/04/24,44,4,21,0,0,15,0.340909091
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,24,Valid,1,Finalized  AB 05/04/24,45,0,19,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,2,113,14,West Rock,315432,25,Valid,1,Finalized  AB 05/04/24,44,0,23,0,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,1,Valid,1,FINALIZED ARV 5/3,45,0,28,4,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,2,Valid,1,,45,1,36,2,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,3,Valid,1,FINALIZED ARV 5/3,45,0,29,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,4,Valid,1,FINALIZED ARV 5/3,45,0,34,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,5,Valid,1,FINALIZED ARV 5/3,45,1,27,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,6,Valid,1,FINALIZED ARV 5/3,44,0,29,0,0,14,0.318181818
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,7,Valid,1,FINALIZED ARV 5/3,45,0,30,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,8,Valid,1,FINALIZED ARV 5/3,45,1,29,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,9,Valid,1,FINALIZED ARV 5/3,45,3,28,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,10,Valid,1,FINALIZED ARV 5/3,45,1,20,2,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,11,Valid,1,,45,5,24,4,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,12,Valid,1,FINALIZED ARV 5/3,42,1,25,0,0,6,0.142857143
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,13,Valid,1,FINALIZED ARV 5/3,44,1,25,0,0,8,0.181818182
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,14,Valid,1,FINALIZED ARV 5/3,45,2,27,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,15,Valid,1,FINALIZED ARV 5/3,45,1,28,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,16,Valid,1,FINALIZED ARV 5/3,46,1,34,0,0,10,0.217391304
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,17,Valid,1,FINALIZED ARV 5/3,45,1,27,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,18,Valid,1,FINALIZED ARV 5/3,45,0,34,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,19,Valid,1,FINALIZED ARV 5/3,45,2,31,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,20,Valid,1,FINALIZED ARV 5/3,45,3,30,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,21,Valid,1,FINALIZED ARV 5/3,45,0,29,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,22,Valid,1,FINALIZED ARV 5/3,45,1,32,2,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,23,Valid,1,FINALIZED ARV 5/3,45,0,24,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,24,Not Valid,2,FINALIZED ARV 5/3,44,0,16,12,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,2,115,11,McLean Arm,315432,25,Valid,1,FINALIZED ARV 5/3,45,0,22,3,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,1,Valid,1,Finalized AB 05/03/24,45,2,20,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,2,Valid,1,Finalized AB 05/03/24,44,8,17,0,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,3,Valid,1,Finalized AB 05/03/24,45,3,23,5,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,4,Valid,1,Finalized AB 05/03/24,44,2,20,0,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,5,Valid,1,Finalized AB 05/03/24,45,12,14,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,6,Valid,1,Finalized AB 05/03/24,45,6,10,0,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,7,Valid,1,Finalized AB 05/03/24,45,7,18,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,8,Valid,1,Finalized AB 05/03/24,45,4,21,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,9,Valid,1,Finalized AB 05/03/24,45,3,16,1,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,10,Valid,1,Finalized AB 05/03/24,44,3,20,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,11,Valid,1,Finalized AB 05/03/24,45,2,20,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,12,Valid,1,Finalized AB 05/03/24,45,2,19,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,13,Valid,1,Finalized AB 05/03/24,45,8,16,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,14,Valid,1,Finalized AB 05/03/24,45,7,18,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,15,Valid,1,Finalized AB 05/03/24,45,8,14,1,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,16,Valid,1,Finalized AB 05/03/24,44,5,21,0,0,14,0.318181818
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,17,Valid,1,Finalized AB 05/03/24,46,2,17,0,0,13,0.282608696
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,18,Valid,1,Finalized AB 05/03/24,45,7,20,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,19,Valid,1,Finalized AB 05/03/24,45,5,21,2,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,20,Valid,1,Verified AB 05/03/24,43,1,16,0,0,13,0.302325581
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,21,Valid,1,Verified AB 05/03/24,45,3,22,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,22,Valid,1,Verified AB 05/03/24,45,0,25,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,23,Valid,1,Verified AB 05/03/24,45,2,16,4,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,24,Valid,1,Verified AB 05/03/24,45,3,15,3,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,116,10,Cape Chacon,315432,25,Valid,1,Verified AB 05/03/24,45,2,24,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,1,Valid,1,FINALIZED ARV 5/4 ,45,1,30,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,2,Valid,1,FINALIZED ARV 5/4 ,46,1,32,0,0,10,0.217391304
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,3,Valid,1,FINALIZED ARV 5/4 ,45,0,29,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,4,Valid,1,FINALIZED ARV 5/4 ,45,0,31,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,5,Valid,1,FINALIZED ARV 5/4 ,45,1,32,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,6,Valid,1,FINALIZED ARV 5/4 ,45,0,35,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,7,Valid,1,FINALIZED ARV 5/4 ,45,1,33,2,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,8,Valid,1,FINALIZED ARV 5/4 ,45,0,35,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,9,Valid,1,FINALIZED ARV 5/4 ,45,0,33,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,10,Valid,1,"FINALIZED ARV 5/4 Re-counted hooks and edited total, AB 5/8/24 ",46,0,39,0,0,7,0.152173913
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,11,Valid,1,FINALIZED ARV 5/4 ,45,0,35,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,12,Valid,1,FINALIZED ARV 5/4 ,45,0,36,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,13,Valid,1,FINALIZED ARV 5/4 ,45,0,36,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,14,Valid,1,FINALIZED ARV 5/4 ,45,0,32,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,15,Valid,1,FINALIZED ARV 5/4 ,45,0,37,0,0,8,0.177777778
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,16,Valid,1,FINALIZED ARV 5/4 ,45,0,27,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,17,Valid,1,FINALIZED ARV 5/4 ,45,1,32,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,18,Valid,1,FINALIZED ARV 5/4 ,45,0,32,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,19,Valid,1,FINALIZED ARV 5/4 ,45,0,36,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,20,Valid,1,FINALIZED ARV 5/4 ,45,0,35,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,21,Valid,1,FINALIZED ARV 5/4 ,45,0,38,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,22,Valid,1,FINALIZED ARV 5/4 ,45,0,38,3,0,4,0.088888889
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,23,Valid,1,FINALIZED ARV 5/4 ,45,1,35,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,24,Valid,1,FINALIZED ARV 5/4 ,45,0,39,0,0,5,0.111111111
+2024,Clarence Sablefish LL Survey,2,117,13,West Devil Rock,315432,25,Valid,1,FINALIZED ARV 5/4 ,45,0,34,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,1,Valid,1,FINALIZED ARV 5/1,46,6,13,0,0,25,0.543478261
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,2,Valid,1,FINALIZED ARV 5/1,44,15,7,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,3,Valid,1,"FINALIZED ARV 5/1 Re-counted hooks and edited total, AB 5/8/24",44,6,11,0,0,26,0.590909091
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,4,Valid,1,FINALIZED ARV 5/1,45,17,5,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,5,Valid,1,FINALIZED ARV 5/1,45,21,6,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,6,Valid,1,FINALIZED ARV 5/1,45,12,6,0,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,7,Valid,1,FINALIZED ARV 5/1,43,13,6,0,0,21,0.488372093
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,8,Valid,1,,44,14,10,1,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,9,Valid,1,FINALIZED ARV 5/1,43,7,9,0,0,25,0.581395349
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,10,Valid,1,FINALIZED ARV 5/1,45,5,14,0,0,25,0.555555556
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,11,Valid,1,FINALIZED ARV 5/1,45,7,19,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,12,Valid,1,FINALIZED ARV 5/1,44,8,12,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,13,Valid,1,FINALIZED ARV 5/1,45,12,9,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,14,Valid,1,FINALIZED ARV 5/1,45,13,13,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,15,Valid,1,FINALIZED ARV 5/1,46,17,11,0,0,15,0.326086957
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,16,Valid,1,FINALIZED ARV 5/1,46,17,7,0,0,20,0.434782609
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,17,Valid,1,FINALIZED ARV 5/1,45,18,7,0,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,18,Valid,1,"FINALIZED ARV 5/1 Re-counted hooks and edited total, AB 5/8/24",44,18,7,0,0,14,0.318181818
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,19,Valid,1,FINALIZED ARV 5/1 ,45,11,10,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,20,Valid,1,FINALIZED ARV 5/1,45,14,12,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,21,Valid,1,FINALIZED ARV 5/1,44,15,9,0,0,19,0.431818182
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,22,Valid,1,FINALIZED ARV 5/1,45,19,8,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,23,Valid,1,FINALIZED ARV 5/1,45,24,8,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,24,Valid,1,FINALIZED ARV 5/1,44,16,5,0,0,22,0.5
+2024,Clarence Sablefish LL Survey,2,124,9,Point Nunez,325431,25,Valid,1,FINALIZED ARV 5/1,46,8,12,0,0,24,0.52173913
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,1,Valid,1,Finalized AB 05/01/24,44,10,4,0,0,27,0.613636364
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,2,Valid,1,Finalized AB 05/01/24,45,17,6,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,3,Valid,1,Finalized AB 05/01/24,45,19,7,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,4,Valid,1,Finalized AB 05/01/24,45,19,9,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,5,Valid,1,Finalized AB 05/01/24,45,14,10,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,6,Valid,1,Finalized AB 05/01/24,45,14,6,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,7,Valid,1,Finalized AB 05/01/24,44,18,3,0,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,8,Valid,1,Finalized AB 05/01/24,45,12,9,1,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,9,Valid,1,Finalized AB 05/01/24,44,16,11,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,10,Valid,1,Finalized AB 05/01/24,45,14,8,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,11,Valid,1,Finalized AB 05/01/24,45,21,5,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,12,Valid,1,Finalized AB 05/01/24,43,19,4,0,0,14,0.325581395
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,13,Valid,1,Finalized AB 05/01/24,45,11,9,1,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,14,Valid,1,Finalized AB 05/01/24,44,13,5,0,0,23,0.522727273
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,15,Valid,1,Finalized AB 05/01/24,44,15,11,0,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,16,Valid,1,Finalized AB 05/01/24,45,12,12,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,17,Valid,1,Finalized AB 05/01/24,45,15,7,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,18,Valid,1,Finalized AB 05/01/24,44,14,8,0,0,18,0.409090909
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,19,Valid,1,Finalized AB 05/01/24,44,6,8,0,0,26,0.590909091
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,20,Valid,1,Finalized AB 05/01/24,45,15,14,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,21,Valid,1,Finalized AB 05/01/24,46,15,8,0,0,20,0.434782609
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,22,Valid,1,Finalized AB 05/01/24,45,20,7,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,23,Valid,1,Finalized AB 05/01/24,45,19,5,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,24,Valid,1,Finalized AB 05/01/24,45,20,9,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,125,8,Point Marsh,325431,25,Valid,1,Finalized AB 05/01/24,45,12,11,4,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,1,Valid,1,Finalized AB 05/01/24,45,4,6,0,0,31,0.688888889
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,2,Valid,1,Finalized AB 05/01/24,45,8,20,2,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,3,Valid,1,Finalized AB 05/01/24,44,5,17,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,4,Valid,1,Finalized AB 05/01/24,45,8,12,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,5,Valid,1,Finalized AB 05/01/24,44,10,4,2,0,25,0.568181818
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,6,Valid,1,Finalized AB 05/01/24,45,12,9,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,7,Valid,1,Finalized AB 05/01/24,45,5,15,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,8,Valid,1,Finalized AB 05/01/24,45,13,9,0,0,23,0.511111111
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,9,Valid,1,,46,9,10,0,0,24,0.52173913
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,10,Valid,1,Finalized AB 05/01/24,45,13,9,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,11,Valid,1,Finalized AB 05/01/24,43,7,12,0,0,24,0.558139535
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,12,Valid,1,Finalized AB 05/01/24,45,9,12,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,13,Valid,1,Finalized AB 05/01/24,45,4,17,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,14,Valid,1,Finalized AB 05/01/24,45,4,19,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,15,Valid,1,Finalized AB 05/01/24,45,4,10,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,16,Valid,1,Finalized AB 05/01/24,45,6,11,8,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,17,Valid,1,Finalized AB 05/01/24,44,5,9,0,0,29,0.659090909
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,18,Valid,1,Finalized AB 05/01/24,44,14,20,0,0,9,0.204545455
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,19,Valid,1,Finalized AB 05/01/24,45,5,20,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,20,Valid,1,Finalized AB 05/01/24,44,11,8,2,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,21,Valid,1,Finalized AB 05/01/24,45,9,14,1,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,22,Valid,1,Finalized AB 05/01/24,45,4,9,0,0,29,0.644444444
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,23,Valid,1,Finalized AB 05/01/24,45,8,6,0,0,27,0.6
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,24,Valid,1,Finalized AB 05/01/24,45,6,6,0,0,28,0.622222222
+2024,Clarence Sablefish LL Survey,2,126,7,Surf Point,325401,25,Valid,1,Finalized AB 05/01/24,45,2,13,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,1,Valid,1,FINALIZED ARV 4/30,45,5,18,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,2,Valid,1,FINALIZED ARV 4/30,45,4,16,2,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,3,Valid,1,FINALIZED ARV 4/30,45,4,10,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,4,Valid,1,FINALIZED ARV 4/30,44,12,15,0,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,5,Valid,1,FINALIZED ARV 4/30,45,12,9,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,6,Valid,1,FINALIZED ARV 4/30,45,7,13,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,7,Valid,1,FINALIZED ARV 4/30,45,5,15,1,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,8,Valid,1,FINALIZED ARV 4/30,45,4,14,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,9,Valid,1,FINALIZED ARV 4/30,45,20,7,1,0,14,0.311111111
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,10,Valid,1,FINALIZED ARV 4/30,45,11,10,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,11,Valid,1,FINALIZED ARV 4/30,45,8,17,0,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,12,Valid,1,FINALIZED ARV 4/30,46,5,22,0,0,12,0.260869565
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,13,Valid,1,FINALIZED ARV 4/30,46,4,16,2,0,21,0.456521739
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,14,Valid,1,FINALIZED ARV 4/30,44,9,16,0,0,11,0.25
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,15,Valid,1,FINALIZED ARV 4/30,44,11,11,2,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,16,Valid,1,FINALIZED ARV 4/30,45,16,9,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,17,Valid,1,FINALIZED ARV 4/30,45,5,12,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,18,Valid,1,FINALIZED ARV 4/30,44,5,13,0,0,19,0.431818182
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,19,Valid,1,FINALIZED ARV 4/30,45,4,13,1,0,26,0.577777778
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,20,Valid,1,FINALIZED ARV 4/30,46,3,6,1,0,25,0.543478261
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,21,Valid,1,FINALIZED ARV 4/30,45,4,15,0,0,22,0.488888889
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,22,Valid,1,FINALIZED ARV 4/30,45,7,14,0,0,20,0.444444444
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,23,Valid,1,FINALIZED ARV 4/30,44,0,22,0,0,17,0.386363636
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,24,Valid,1,FINALIZED ARV 4/30,45,3,17,0,0,17,0.377777778
+2024,Clarence Sablefish LL Survey,2,127,6,Point Marsh,325401,25,Valid,1,FINALIZED ARV 4/30,45,3,23,3,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,1,Valid,1,Finalized 04/30/24 AB,45,8,18,6,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,2,Valid,1,Finalized 04/30/24 AB,46,14,14,0,0,13,0.282608696
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,3,Valid,1,Finalized 04/30/24 AB,46,12,14,0,0,11,0.239130435
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,4,Valid,1,Finalized 04/30/24 AB,45,13,14,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,5,Valid,1,Finalized 04/30/24 AB,45,11,14,2,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,6,Valid,1,Finalized 04/30/24 AB,45,16,15,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,7,Valid,1,Finalized 04/30/24 AB,45,15,9,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,8,Valid,1,Finalized 04/30/24 AB,45,24,4,0,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,9,Valid,1,Finalized 04/30/24 AB,44,21,11,0,0,7,0.159090909
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,10,Valid,1,Finalized 04/30/24 AB,45,9,17,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,11,Valid,1,Finalized 04/30/24 AB,45,18,16,0,0,6,0.133333333
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,12,Valid,1,Finalized 04/30/24 AB,45,7,19,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,13,Valid,1,Finalized 04/30/24 AB,45,10,18,0,0,10,0.222222222
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,14,Valid,1,Finalized 04/30/24 AB,47,15,14,3,0,11,0.234042553
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,15,Valid,1,Finalized 04/30/24 AB,45,13,15,1,0,7,0.155555556
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,16,Valid,1,Finalized 04/30/24 AB,44,9,20,0,0,8,0.181818182
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,17,Valid,1,Finalized 04/30/24 AB,44,6,18,0,0,15,0.340909091
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,18,Valid,1,Finalized 04/30/24 AB,45,6,18,0,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,19,Valid,1,Finalized 04/30/24 AB,45,9,15,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,20,Valid,1,Finalized 04/30/24 AB,45,4,16,0,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,21,Valid,1,Finalized 04/30/24 AB,45,2,25,0,0,11,0.244444444
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,22,Valid,1,Finalized 04/30/24 AB,44,5,18,0,0,13,0.295454545
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,23,Valid,1,Finalized 04/30/24 AB,45,2,29,0,0,9,0.2
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,24,Valid,1,Finalized 04/30/24 AB,45,4,23,1,0,13,0.288888889
+2024,Clarence Sablefish LL Survey,2,128,4,Cape Muzon,325401,25,Valid,1,Finalized 04/30/24 AB,45,1,17,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,1,Valid,1,FINALIZED ARV 4/30,45,3,8,0,0,27,0.6
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,2,Valid,1,FINALIZED ARV 4/30,45,4,16,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,3,Valid,1,"FINALIZED ARV 4/30 Re-counted hooks and edited total, AB 5/8/24",44,10,11,0,0,12,0.272727273
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,4,Valid,1,FINALIZED ARV 4/30,45,6,9,0,0,21,0.466666667
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,5,Valid,1,FINALIZED ARV 4/30,44,4,9,0,0,21,0.477272727
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,6,Valid,1,FINALIZED ARV 4/30,43,7,6,0,0,27,0.627906977
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,7,Valid,1,"Re-counted hooks and edited total, AB 5/8/24",46,10,11,0,0,15,0.326086957
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,8,Valid,1,FINALIZED ARV 4/30,44,4,13,0,0,16,0.363636364
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,9,Valid,1,FINALIZED ARV 4/30,45,15,3,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,10,Valid,1,FINALIZED ARV 4/30,44,12,7,0,0,19,0.431818182
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,11,Valid,1,FINALIZED ARV 4/30,42,4,9,0,0,19,0.452380952
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,12,Valid,1,FINALIZED ARV 4/30,45,4,16,4,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,13,Valid,1,FINALIZED ARV 4/30,41,6,12,0,0,17,0.414634146
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,14,Valid,1,FINALIZED ARV 4/30,43,3,8,0,0,22,0.511627907
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,15,Valid,1,FINALIZED ARV 4/30,45,4,13,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,16,Valid,1,FINALIZED ARV 4/30,45,5,13,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,17,Valid,1,FINALIZED ARV 4/30,45,11,7,0,0,19,0.422222222
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,18,Valid,1,FINALIZED ARV 4/30,43,8,12,5,0,11,0.255813953
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,19,Valid,1,"FINALIZED ARV 4/30 Re-counted hooks and edited total, AB 5/8/24",46,5,13,0,0,20,0.434782609
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,20,Valid,1,,45,5,13,1,0,16,0.355555556
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,21,Valid,1,FINALIZED ARV 4/30,45,4,12,0,0,12,0.266666667
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,22,Valid,1,FINALIZED ARV 4/30,42,5,8,0,0,20,0.476190476
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,23,Valid,1,FINALIZED ARV 4/30,45,3,13,7,0,15,0.333333333
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,24,Valid,1,FINALIZED ARV 4/30,45,6,14,0,0,18,0.4
+2024,Clarence Sablefish LL Survey,2,129,5,Cape Muzon,325431,25,Valid,1,"FINALIZED ARV 4/30 Re-counted hooks and edited total, AB 5/8/24",46,7,10,3,0,20,0.434782609
